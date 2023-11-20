@@ -91,5 +91,18 @@ public class ArrayTest {
 		//可以直接使用等號給予值只有8種基本資料型態大小寫&字串
 				
 	}
+	
+
+	@Test
+	public void listTest2() {
+		int a = 5;
+		int[] b = new int[5];
+		System.out.println(a);
+		System.out.println(b);
+		//List<>括號內的類別型態放的一定為大寫的類別型態
+		System.out.println("==================");
+		//可以直接使用等號給予值只有8種基本資料型態大小寫&字串
+				
+	}
 }
 
