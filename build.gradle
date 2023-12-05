@@ -19,6 +19,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	
+	//spring cache
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	
+	//Caffeine Cache
+	implementation 'com.github.ben-manes.caffeine:caffeine'
+	
 	//spring boot data jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	

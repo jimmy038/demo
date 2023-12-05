@@ -9,7 +9,9 @@ public enum RtnCode { //先建立package再建立enum(列舉),取名RtnCode,這邊放錯誤訊息
 	PARAM_ERROR(400,"Param_error!!"),//  Param_error參數錯誤的意思 通常字串內容為前面訊息的小寫
 	ACCOUNT_EXISTED(400,"Account existed!!"),//  Account existed帳戶已存在
 	ACCOUNT_NOT_FOUND(404,"Account not found!!"),//  Account not found找不到此帳戶
-	INSUFFICIENT_BLANCE(400,"Insufficient_Blance!!") //  Insufficient_Blance餘額不足
+	INSUFFICIENT_BLANCE(400,"Insufficient Blance!!"), //  Insufficient_Blance餘額不足
+	LOGIN_ERROR(400,"Login error!!"), //
+	PLEASE_LOGIN_FIRST(400,"please Login First!!")
 	;
 	
 	private int code; //這邊的code指的是代碼,回傳一個代碼

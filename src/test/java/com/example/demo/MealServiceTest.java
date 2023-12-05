@@ -88,7 +88,7 @@ public class MealServiceTest {
 	}
 	
 	@Test
-	public void containingTest() { //包含
+	public void containingTest() { //containing包含
 		List<Meal> res= mealDao.findByNameContainingAndCookingStyleContaining("e", "b"); //印出name&cookingStyle裡面的包含e及b的
 //		List<Meal> res = mealDao.findByNameContaining("e"); //印出name包含e的
 		for(Meal item : res) {

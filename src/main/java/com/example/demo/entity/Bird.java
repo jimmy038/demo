@@ -1,7 +1,7 @@
 package com.example.demo.entity;
 
-			 //Bird繼承Animal(此時Bird為子類別Animal為父類別)
-public class Bird extends Animal{ //extends擴充(繼承關鍵字),繼承Animal
+//Bird繼承Animal(此時Bird為子類別Animal為父類別) //建立執行緒 – 實作 Runnable 介面
+public class Bird extends Animal implements Runnable{ //extends擴充(繼承關鍵字),繼承Animal
 	
 	//HAS-A 關係 (聚合(包含))(沒關係的繼承),單純為了減少程式碼的重複,把重複的東西抽出產生一個新的類別
 	//因需要的屬性被原有的類別(class)所定義了,所以當需要這些屬性時可以直接拿TaipeiBank類別來使用
@@ -39,6 +39,15 @@ public class Bird extends Animal{ //extends擴充(繼承關鍵字),繼承Animal
 	public void flying() {
 		//super.代表呼叫父類別的方法,去get父類別(Animal)的getName方法
 		System.out.println(super.getName() + " 正在飛!!"); 
+	}
+
+	//建立執行緒 – 實作 Runnable 介面
+	@Override
+	public void run() {
+		for(int i = 1; i <= 5 ; i++) {
+			System.out.println(getName() + "目前正在跑第" + i + "圈");
+		}
+		System.out.println("幫我開直播!!");
 	}		
 	
 }

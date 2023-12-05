@@ -3,7 +3,10 @@ package com.example.demo.service.ifs;
 import com.example.demo.vo.AtmResponse;
 
 public interface AtmService {
-
+	
+	//寫Session,Session 是儲存在伺服器端(Server)的資料
+	public AtmResponse login(String account,String pwd);
+	
 	public AtmResponse addInfo(String account,String pwd); //()←帶入帳號密碼
 	
 	//檢查帳密																			
