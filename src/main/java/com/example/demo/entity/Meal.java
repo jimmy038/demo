@@ -8,18 +8,18 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "meal")
-@IdClass(value = MealId.class)//§i¶D¸ê®Æ®w¨â­ÓPK IDºÞ²zªºclass
+@IdClass(value = MealId.class)//ï¿½iï¿½Dï¿½ï¿½Æ®wï¿½ï¿½ï¿½PK IDï¿½Þ²zï¿½ï¿½class
 public class Meal {
 
-	@Id					   //Id ¹ïÀ³¨ì¸ê®Æ®wªºPk
-	@Column(name = "name") //ColumnÄæ¦ì Column¸Ì­±ªºname¹ïÀ³¨ì¸ê®Æ®w¸ê®Æªí¤ºªºÄæ¦ì¦WºÙ
+	@Id					   //Id ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½Pk
+	@Column(name = "name") //Columnï¿½ï¿½ï¿½ Columnï¿½Ì­ï¿½ï¿½ï¿½nameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½Æªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½
 	private String name;
 	
 	@Id
-	@Column(name = "cooking_style")//Column¸Ì­±ªºname,¹ïÀ³¨ì¸ê®Æ®w¸ê®Æªí¤ºªºcooking_style
+	@Column(name = "cooking_style")//Columnï¿½Ì­ï¿½ï¿½ï¿½name,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½Æªï¿½ï¿½ï¿½cooking_style
 	private String cookingStyle;
 	
-	@Column(name = "price")//Column¸Ì­±ªºname,¹ïÀ³¨ì¸ê®Æ®w¸ê®Æªí¤ºªºÄæ¦ì»ù®æprice
+	@Column(name = "price")//Columnï¿½Ì­ï¿½ï¿½ï¿½name,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½Æªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½price
 	private int price;
 
 	

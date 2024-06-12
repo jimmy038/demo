@@ -1,6 +1,6 @@
 package com.example.demo.entity;
 
-public class C { 	//抽出AB相同的屬性到C
+public class C { 	//嚙踝蕭XAB嚙諛同嚙踝蕭嚙豎性剁蕭C
 
 	private String city;
 	
@@ -9,11 +9,11 @@ public class C { 	//抽出AB相同的屬性到C
 	private String county;
 	
 	
-	public C() {	//先建立預設建構方法,建構方法的方法名稱為類別名稱
+	public C() {	//嚙踝蕭嚙諍立預嚙稽嚙諍構嚙踝蕭k,嚙諍構嚙踝蕭k嚙踝蕭嚙踝蕭k嚙磕嚙誶穿蕭嚙踝蕭嚙瞌嚙磕嚙踝蕭
 		super();
 	}
 
-	//再建立帶有屬性的建構方法
+	//嚙璀嚙諍立帶嚙踝蕭嚙豎性迎蕭嚙諍構嚙踝蕭k
 	public C(String city, String state, String county) {
 		super();
 		this.city = city;

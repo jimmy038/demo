@@ -4,20 +4,18 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 //@SpringBootTest
-class DemoApplicationTest {
+public class DemoApplicationTest {
 
 	@Test
-	//¥D­nµ²ºc(»Ý­I°_¨Ó)		   void¤£·|¦^¶Ç¥ô¦óªº­È		  ¤èªk¦WºÙ³£¤@©w·|±a¤p¬A¸¹()¥i¨M©w¬O§_±a¶i°Ñ¼Æ//
-	/*¤U¤è¬°¤èªkµ²ºcpublic(Åv­­)void(¦^¶Ç­È«¬ºA)firstTest(¤èªk¦WºÙ(°Ñ¼Æ))(¤èªk¦WºÙ¦Û©w¸q)¤j¬A¸¹¤º{}
-	¬°¼gÅÞ¿è·§©Àªº°Ï°ì */
 	public void firstTest() {
 		int a = 5 ;
+		long b = 7896666666L;
+		String string = new String();
 		System.out.println(a);
-		//¦r¦ê³q±`³£·|«Å§i§¹ÅÜ¼Æª½±µµ¹­È(¦r¦ê¦ê±µª½±µ¨Ï¥Î+²Å¸¹§Y¥i)
+		System.out.println(b);
+		//ï¿½rï¿½ï¿½qï¿½`ï¿½ï¿½ï¿½|ï¿½Å§iï¿½ï¿½ï¿½Ü¼Æªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½rï¿½ï¿½ê±µï¿½ï¿½ï¿½ï¿½ï¿½Ï¥ï¿½+ï¿½Å¸ï¿½ï¿½Yï¿½i)
 		String str1 = "123";
 		String str = new String("ABC");
-		System.out.println(str + str1);
-		
+		System.out.println("str :" + str + str1);	
 	}
-
 }

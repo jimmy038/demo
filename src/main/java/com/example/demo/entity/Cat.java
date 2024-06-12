@@ -1,26 +1,26 @@
 package com.example.demo.entity;
 
-			//CatÄ~©ÓAnimal(¦¹®ÉCat¬°¤lÃþ§OAnimal¬°¤÷Ãþ§O)
-public class Cat extends Animal {	//extendsÂX¥R(Ä~©ÓÃöÁä¦r),Ä~©ÓAnimal
+			//Catï¿½~ï¿½ï¿½Animal(ï¿½ï¿½ï¿½ï¿½Catï¿½ï¿½ï¿½lï¿½ï¿½ï¿½OAnimalï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½O)
+public class Cat extends Animal {	//extendsï¿½Xï¿½R(ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½r),ï¿½~ï¿½ï¿½Animal
 	
 
 	public Cat() {
 		super();
-		System.out.println("Cat «Øºc¤èªk");
+		System.out.println("Cat ï¿½Øºcï¿½ï¿½k");
 	}
 	
 	@Override
 	public void eat() {
-		System.out.println(super.getName() + "Cat ¦Y¤Ó¹¡!!");
+		System.out.println(super.getName() + "Cat ï¿½Yï¿½Ó¹ï¿½!!");
 	}
 	
 	@Override
 	public void sleep() {
-		System.out.println(super.getName() + "Cat ¨SºÎ¹¡!!");
+		System.out.println(super.getName() + "Cat ï¿½Sï¿½Î¹ï¿½!!");
 	}
 	
 	public void barking() {
-		System.out.println("Cat ¥¿¦b¥s!!");
+		System.out.println("Cat ï¿½ï¿½ï¿½bï¿½s!!");
 	}
 	
 }

@@ -1,4 +1,4 @@
-package com.example.demo.service.impl; //°µ¹ê§@¼gÅÞ¿è¤Î¤èªkªº¦a¤èimpl
+package com.example.demo.service.impl; //ï¿½ï¿½ï¿½ï¿½@ï¿½gï¿½Þ¿ï¿½Î¤ï¿½kï¿½ï¿½ï¿½aï¿½ï¿½impl
 
 import java.util.List;
 import java.util.Optional;
@@ -11,29 +11,29 @@ import com.example.demo.entity.PersonInfo;
 import com.example.demo.repository.PersonInfoDao;
 import com.example.demo.service.ifs.PersonInfoService;
 
-//¡õ½Ðspring boot°UºÞ¤SºÙ±±¨î¤ÏÂà(IOC) 
-@Service	/*PersonInfoServiceImpl  ¡õ¥h¹ê§@    PersonInfoService*/
+//ï¿½ï¿½ï¿½ï¿½spring bootï¿½Uï¿½Þ¤Sï¿½Ù±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(IOC) 
+@Service	/*PersonInfoServiceImpl  ï¿½ï¿½ï¿½hï¿½ï¿½@    PersonInfoService*/
 public class PersonInfoServiceImpl implements PersonInfoService{
 	
-	@Autowired //§â°UºÞµ¹spring boot,PersonInfoDao¨Ì¿àª`¤J(DI)³q±`¤SºÙDI¹ê²{IOC,(DI)ÃöÁä¦r:@Autowired
+	@Autowired //ï¿½ï¿½Uï¿½Þµï¿½spring boot,PersonInfoDaoï¿½Ì¿ï¿½`ï¿½J(DI)ï¿½qï¿½`ï¿½Sï¿½ï¿½DIï¿½ï¿½{IOC,(DI)ï¿½ï¿½ï¿½ï¿½r:@Autowired
 	private PersonInfoDao personInfoDao;
 
 	@Override
 	public void addPersonInfo(PersonInfo personInfo) {
-		//¨Ï¥Îif else¤Î¥¿³Wªí¹F¦¡§PÂ_id®æ¦¡¬O§_¥¿½T,¨Ï¥ÎpatternÅÜ¼Æ±µ¥¿³Wªí¹F¦¡ªº®æ¦¡
-		String id = personInfo.getId(); //¨ú¥Xid,getidªº¤èªk
-		//pattern¬°id©Ò»Ý¨Dªº±ø¥ó,³]©w¦b¤j¼g¤pA¨ìZ,±Æ°£ABDEFHabdefh,«á­±¨â½X1©Î2,«á­±8½X
+		//ï¿½Ï¥ï¿½if elseï¿½Î¥ï¿½ï¿½Wï¿½ï¿½Fï¿½ï¿½ï¿½Pï¿½_idï¿½æ¦¡ï¿½Oï¿½_ï¿½ï¿½ï¿½T,ï¿½Ï¥ï¿½patternï¿½Ü¼Æ±ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½Fï¿½ï¿½ï¿½ï¿½ï¿½æ¦¡
+		String id = personInfo.getId(); //ï¿½ï¿½ï¿½Xid,getidï¿½ï¿½ï¿½ï¿½k
+		//patternï¿½ï¿½idï¿½Ò»Ý¨Dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½]ï¿½wï¿½bï¿½jï¿½gï¿½pAï¿½ï¿½Z,ï¿½Æ°ï¿½ABDEFHabdefh,ï¿½á­±ï¿½ï¿½X1ï¿½ï¿½2,ï¿½á­±8ï¿½X
 		String pattern = "[A-Za-z][1,2]\\d{8}"; 
-		if (id.matches(pattern)) {	//id¤ñ¹ïpatternªº®æ¦¡¬O§_¥¿½T,(ª«¥ó)ÂI(¤èªk)
-			System.out.println("²Å¦X®æ¦¡!!");
-			personInfoDao.save(personInfo); //¦s¸ê®Æ¶i¨ì¸ê®Æ®w¤º,jpa¤ºªºsave»{±o¬OPK,save¦s¨ú¸ê®Æ,¦s¨ú¸ê®Æ®É»{±o¬OID
-		}else {								//­YPK(°ß¤@­È)¦s¦b®É·|­×§ï¤@µ§¸ê®Æ,¤£¦s¦b®É·s¼W¤@µ§¸ê®Æ,PK¦P®É¥i¥H°µ¨ì¼W­×¨â¼Ë
-			System.out.println( "¤£²Å¦X®æ¦¡!!");
+		if (id.matches(pattern)) {	//idï¿½ï¿½ï¿½patternï¿½ï¿½ï¿½æ¦¡ï¿½Oï¿½_ï¿½ï¿½ï¿½T,(ï¿½ï¿½ï¿½ï¿½)ï¿½I(ï¿½ï¿½k)
+			System.out.println("ï¿½Å¦Xï¿½æ¦¡!!");
+			personInfoDao.save(personInfo); //ï¿½sï¿½ï¿½Æ¶iï¿½ï¿½ï¿½Æ®wï¿½ï¿½,jpaï¿½ï¿½ï¿½ï¿½saveï¿½{ï¿½oï¿½OPK,saveï¿½sï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½sï¿½ï¿½ï¿½ï¿½Æ®É»{ï¿½oï¿½OID
+		}else {								//ï¿½YPK(ï¿½ß¤@ï¿½ï¿½)ï¿½sï¿½bï¿½É·|ï¿½×§ï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½sï¿½bï¿½É·sï¿½Wï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½,PKï¿½Pï¿½É¥iï¿½Hï¿½ï¿½ï¿½ï¿½Wï¿½×¨ï¿½ï¿½
+			System.out.println( "ï¿½ï¿½ï¿½Å¦Xï¿½æ¦¡!!");
 		}
 	}
 	
-//=================================¤À¹j½u====================================//	
-	@Override // ­«·s©w¸q·s¼W¤èªk
+//=================================ï¿½ï¿½ï¿½jï¿½u====================================//	
+	@Override // ï¿½ï¿½ï¿½sï¿½wï¿½qï¿½sï¿½Wï¿½ï¿½k
 	public PersonInfo addInfo(PersonInfo personInfo) {
 		if (!StringUtils.hasText(personInfo.getId()) || !StringUtils.hasText(personInfo.getName())
 				|| personInfo.getAge() <= 0 || !StringUtils.hasText(personInfo.getCity())) {
@@ -46,12 +46,12 @@ public class PersonInfoServiceImpl implements PersonInfoService{
 	}
 	
 	
-	@Override //­«·s©w¸qfindAll¤èªk
+	@Override //ï¿½ï¿½ï¿½sï¿½wï¿½qfindAllï¿½ï¿½k
 	public List<PersonInfo> findAll() {
 		return personInfoDao.findAll();
 	}
 	
-	@Override //­«·s©w¸qfindById¤èªk
+	@Override //ï¿½ï¿½ï¿½sï¿½wï¿½qfindByIdï¿½ï¿½k
 	public PersonInfo findById(String name) {
 		Optional<PersonInfo> op = personInfoDao.findById(name);
 		if(op.isEmpty()) {
@@ -60,30 +60,30 @@ public class PersonInfoServiceImpl implements PersonInfoService{
 		return op.get();
 	}
 	
-//========================¤À¹j½u====================================//
+//========================ï¿½ï¿½ï¿½jï¿½u====================================//
 	@Override
-	public void deleteAll() {	//­«·s©w¸q§R°£¸ê®Æªº¤èªk
+	public void deleteAll() {	//ï¿½ï¿½ï¿½sï¿½wï¿½qï¿½Rï¿½ï¿½ï¿½ï¿½Æªï¿½ï¿½ï¿½k
 		personInfoDao.deleteAll();
 	}
 
-	@Override	//³o³¡¤À¬°save¸òsaveAll,¹ï©ó¸ê®ÆÀË¬d³æµ§¸ò¦hµ§
-	public void addInfoList(List<PersonInfo> infoList) { //°²³]infoList¦³10µ§¸ê®Æ
+	@Override	//ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½saveï¿½ï¿½saveAll,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¬dï¿½æµ§ï¿½ï¿½hï¿½ï¿½
+	public void addInfoList(List<PersonInfo> infoList) { //ï¿½ï¿½ï¿½]infoListï¿½ï¿½10ï¿½ï¿½ï¿½ï¿½ï¿½
 		String pattern = "[a-zA-Z][1,2]\\d{8}";	
-		for (PersonInfo item : infoList ) { //¨Ï¥Îforeach¹M¾ú³vµ§ÀË¬d
+		for (PersonInfo item : infoList ) { //ï¿½Ï¥ï¿½foreachï¿½Mï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ë¬d
 			String id = item.getId();
-			//StringUtils.hasText(id)ÀË¬d¬O§_¬°ªÅ¤£¬OªÅ¬°true,§_«hfalse
-			//¥H¤U¼gªk¬°:¡õ¦pªGID¬°null ¥B ID¤£²Å¦Xpattern®Éªºµ²ªG¬O¬Û¤Ï®É(!),¾ã­Ó±ø¥ó§PÂ_§¹µ²ªG¬Û¤Ï
-//			if(!(StringUtils.hasText(id) && id.matches(pattern))) { //¦¹¼gªk¬°­ì¥»§PÂ_ªº¾ã­Ó¥¿¦Vµ²ªG°µ¤Ï¦VÅÜ§ó
+			//StringUtils.hasText(id)ï¿½Ë¬dï¿½Oï¿½_ï¿½ï¿½ï¿½Å¤ï¿½ï¿½Oï¿½Å¬ï¿½true,ï¿½_ï¿½hfalse
+			//ï¿½Hï¿½Uï¿½gï¿½kï¿½ï¿½:ï¿½ï¿½ï¿½pï¿½GIDï¿½ï¿½null ï¿½B IDï¿½ï¿½ï¿½Å¦Xpatternï¿½Éªï¿½ï¿½ï¿½ï¿½Gï¿½Oï¿½Û¤Ï®ï¿½(!),ï¿½ï¿½Ó±ï¿½ï¿½ï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½Û¤ï¿½
+//			if(!(StringUtils.hasText(id) && id.matches(pattern))) { //ï¿½ï¿½ï¿½gï¿½kï¿½ï¿½ï¿½ì¥»ï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½Ó¥ï¿½ï¿½Vï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½Ï¦Vï¿½Ü§ï¿½
 //				System.out.println("id error!!");
-//				return; //return¸õ¥X¤èªk¹ïÀ³¨ìvoid
+//				return; //returnï¿½ï¿½ï¿½Xï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½void
 //			}
-			//¡õ¦pªG§PÂ_§¹¬°falseªº¸Ü©ÎªÌ ID¤ñ¹ïpatternµ²ªG¤£²Å¦X®É,´N¦L¥X"id error!!"³Ì«á¸õ¥X
-			if(!StringUtils.hasText(id) || !id.matches(pattern)) { /*hasText§PÂ_§¹¬°false®É©Îpattern¤ñ¹ïµ²ªG¬°false®É
-				System.out.println("id error!!");					·í¨â¼Ë±ø¥óº¡¨¬¨ä¤¤¤@­Ó®É§i¶D¥Lid¿ù»~*/
-				return; //return¸õ¥X¤èªk¹ïÀ³¨ìvoid
+			//ï¿½ï¿½ï¿½pï¿½Gï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½falseï¿½ï¿½ï¿½Ü©Îªï¿½ IDï¿½ï¿½ï¿½patternï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½Å¦Xï¿½ï¿½,ï¿½Nï¿½Lï¿½X"id error!!"ï¿½Ì«ï¿½ï¿½ï¿½X
+			if(!StringUtils.hasText(id) || !id.matches(pattern)) { /*hasTextï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½falseï¿½É©ï¿½patternï¿½ï¿½ïµ²ï¿½Gï¿½ï¿½falseï¿½ï¿½
+				System.out.println("id error!!");					ï¿½ï¿½ï¿½Ë±ï¿½ï¿½óº¡¨ï¿½ï¿½ä¤¤ï¿½@ï¿½Ó®É§iï¿½Dï¿½Lidï¿½ï¿½ï¿½~*/
+				return; //returnï¿½ï¿½ï¿½Xï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½ï¿½void
 			}
-		}	//for°j°é°µÀË¬d§PÂ_§¹«á¦A¦s¤J¸ê®Æ
-		personInfoDao.saveAll(infoList); //±qsaveÅÜ¦¨saveAll´î¤Ö»P¸ê®Æ®w¾Þ§@ªº¦¸¼Æ,¤@¦¸¦s¦hµ§¸ê®Æ
+		}	//forï¿½jï¿½é°µï¿½Ë¬dï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½Aï¿½sï¿½Jï¿½ï¿½ï¿½
+		personInfoDao.saveAll(infoList); //ï¿½qsaveï¿½Ü¦ï¿½saveAllï¿½ï¿½Ö»Pï¿½ï¿½Æ®wï¿½Þ§@ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½@ï¿½ï¿½ï¿½sï¿½hï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 

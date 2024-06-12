@@ -16,36 +16,35 @@ import com.example.demo.service.ifs.AtmService;
 import com.example.demo.vo.AtmRequest;
 import com.example.demo.vo.AtmResponse;
 
-@RestController //controller³£­n¥ı¥[@RestController 
+@RestController
 public class AtmController {
 
-	@Autowired 
+	@Autowired
 	private AtmService atmService;
-//														  session¼È¦s±b±K	
-	@GetMapping(value = "atm/login") //µ¹¤©¸ô®|¨Ï¥ÎGet       ¡õ¦b°Ñ¼Æ¤º©ñ¤JSession 
+//						 							
+	@GetMapping(value = "atm/login")
 	public AtmResponse login(@RequestBody AtmRequest req, HttpSession session) {
+		//
 		if(session.getAttribute("account") != null) {
 			return new AtmResponse(null, RtnCode.SUCCESSFUL);
 		}
 		AtmResponse res = atmService.login(req.getAccount(), req.getPwd());
 		if(res.getRtnCode().getCode() == 200) {
-			//³z¹L setAttribute(String, Object) ³]©w key-value
-			session.setAttribute("account", req.getAccount());//¦s±b¸¹
-			session.setAttribute("password", req.getPwd());	  //¦s±K½X
-			session.setMaxInactiveInterval(300); //³]©wsession¦³®Ä®É¶¡¬°300¬í,session¹w³]³æ¦ì¬°¬í,(¹w³]¦³®Ä®É¶¡¬°30¤À)
+			session.setAttribute("account", req.getAccount());//keyå€¼ valueå€¼
+			session.setAttribute("password", req.getPwd());	  //keyå€¼ valueå€¼
+			session.setMaxInactiveInterval(300); //è¨­å®šsessionæœ‰æ•ˆæ™‚é–“300ç§’ç‚º5åˆ†é˜(åŸé è¨­30åˆ†é˜)
 		}
 		return res;
 	}
 	
-//	¨âºØ¼gªk¡õ	
-//	@CacheEvict(cacheNames = "atm_login",key = "#req.account") //logoutªº§R°£,§R°£key+value
+//	ï¿½ï¿½Ø¼gï¿½kï¿½ï¿½	
+//	@CacheEvict(cacheNames = "atm_login",key = "#req.account") //logoutï¿½ï¿½ï¿½Rï¿½ï¿½,ï¿½Rï¿½ï¿½key+value
 //	public AtmResponse logout(@RequestBody AtmRequest req, HttpSession session) {
-	@GetMapping(value = "atm/logout") //url:localhost:8080/atm/logout?account=­È     
+	@GetMapping(value = "atm/logout")      //url
 	@CacheEvict(cacheNames = "atm_get_balance",key = "#account")
 	public AtmResponse logout(@RequestParam String account, HttpSession session) {
-		//Åısession¥¢®Ä
+		//è®“sessionå¤±æ•ˆ
 		session.invalidate();
-		//¦^¶Ç¤@­Ó·sªºAtmResponse
 		return new AtmResponse(null, RtnCode.SUCCESSFUL); 
 	}
 	
@@ -55,16 +54,17 @@ public class AtmController {
 		return atmService.addInfo(req.getAccount(), req.getPwd());
 	}
 		
-//	­Y­n¨ú±o¾lÃB´N­n¥ıµn¤J¦¨¥\¤~·|¦³±b±K,¤~¦³¿ìªk¨Ï¥ÎgetBalanceªº¤èªk
-	@GetMapping(value = "atm/get_balance") //µ¹¨Ï¥ÎªÌ©I¥s¼gªº®æ¦¡¥Î©³½u¦ê±µ
-	public AtmResponse getBalanceByAccount(HttpSession session) {
-		String account= (String)session.getAttribute("account"); //¦b³o­Óª«¥ó«e­±ªº(String)¬°±j¨îÂà«¬¼gªk;
-		String pwd = (String)session.getAttribute("password");	//¦b³o­Óª«¥ó«e­±ªº(String)¬°±j¨îÂà«¬¼gªk;
-		//¡õ¦b¤W­±¨ú¥X±b±K«á¦A¥h°µ§PÂ_
-		if(StringUtils.hasText(account)) { //§PÂ_±b¸¹¬O§_¬°ªÅ,¦pªGaccount¦³ªF¦èªº¸Ü´Nªí¥Ü±K½X¤]¦³ªF¦è,¦]¬°¬O¤@¦P¦s¤Jªº
+
+	@GetMapping(value = "atm/get_balance") //è®“ä½¿ç”¨è€…å‘¼å«ï¼Œå…©å€‹å–®å­—åšåº•ç·šä¸²æ¥
+	public AtmResponse getBalanceByAccount(HttpSession session) { 
+		//å–å‡ºå¸³è™ŸåŠå¯†ç¢¼ åŸå›å‚³ç‚ºç‰©ä»¶ï¼Œä½†æ¥æ”¶å‹æ…‹æ˜¯å­—ä¸²æ•…éœ€å¼·è½‰ç‚ºå­—ä¸²åšå›å‚³ (éœ€å…ˆç¢ºå®šå…§éƒ¨å­˜æ”¾ç‚ºå­—ä¸²)
+		String account = (String)session.getAttribute("account"); 
+		String pwd = (String)session.getAttribute("password");	  
+		//å¼·è½‰å¾Œæª¢æŸ¥åˆ¤æ–·å¸³è™Ÿæœ‰å­˜åœ¨çš„è©±ç›´æ¥å›å‚³å¾Œå­˜å…¥å¸³å¯†
+		if(StringUtils.hasText(account)) { //ï¿½Pï¿½_ï¿½bï¿½ï¿½ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½,ï¿½pï¿½Gaccountï¿½ï¿½ï¿½Fï¿½èªºï¿½Ü´Nï¿½ï¿½Ü±Kï¿½Xï¿½]ï¿½ï¿½ï¿½Fï¿½ï¿½,ï¿½]ï¿½ï¿½ï¿½Oï¿½@ï¿½Pï¿½sï¿½Jï¿½ï¿½
 			return atmService.getBalanceByAccount(account, pwd);
 		}
-		//­Y¨S¶i¨ìif§PÂ_¦¡,´N¬°¨S¦³±b¸¹´N·|­n¨D§A¥ıµn¤J
+		//å°šæœªç™»å…¥å¦å‰‡å›å‚³è«‹å…ˆç™»å…¥
 		return new AtmResponse(null, RtnCode.PLEASE_LOGIN_FIRST);
 	}
 	

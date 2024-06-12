@@ -2,38 +2,38 @@ package com.example.demo.entity;
 
 import com.example.demo.service.ifs.RunService;
 
-			//DogÃþ§O,¹ê§@(implements)¤¶­±(RunService)
-public class Dog implements RunService{ // public(³Q¨Ï¥ÎªºÅv­­³Ì¤j)¤èªk¤ºªºÅÜ¼Æ¤£¯à¥[Åv­­
+			//Dogï¿½ï¿½ï¿½O,ï¿½ï¿½@(implements)ï¿½ï¿½ï¿½ï¿½(RunService)
+public class Dog implements RunService{ // public(ï¿½Qï¿½Ï¥Îªï¿½ï¿½vï¿½ï¿½ï¿½Ì¤j)ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½Ü¼Æ¤ï¿½ï¿½ï¿½[ï¿½vï¿½ï¿½
 
-	private String name = "Apple"; // private¨p¦³(³Q¨Ï¥ÎªºÅv­­³Ì¤p),ÄÝ©Ê«áµ¹µ¥¸¹µ¹¹w³]­È,¦bÃþ§O©³¤UªºÅÜ¼ÆºÙ¬°ÄÝ©Ê
+	private String name = "Apple"; // privateï¿½pï¿½ï¿½(ï¿½Qï¿½Ï¥Îªï¿½ï¿½vï¿½ï¿½ï¿½Ì¤p),ï¿½Ý©Ê«áµ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½wï¿½]ï¿½ï¿½,ï¿½bï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½Ü¼ÆºÙ¬ï¿½ï¿½Ý©ï¿½
 
-	private String color; // ÄÝ©Ê¤§¶¡¤À¶}¸û¦n¿ë§O
+	private String color; // ï¿½Ý©Ê¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½}ï¿½ï¿½ï¿½nï¿½ï¿½O
 
-	private int age; // ÄÝ©Ê¼g§¹·|¹ïÄÝ©Ê²£¥Íget set,ÄÝ©Ê³]¬°¨p¦³¼g§¹»Ý´£¨Ñ¤èªk¨Ñ§O¤H¨Ï¥Î
+	private int age; // ï¿½Ý©Ê¼gï¿½ï¿½ï¿½|ï¿½ï¿½ï¿½Ý©Ê²ï¿½ï¿½ï¿½get set,ï¿½Ý©Ê³]ï¿½ï¿½ï¿½pï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Ý´ï¿½ï¿½Ñ¤ï¿½kï¿½Ñ§Oï¿½Hï¿½Ï¥ï¿½
 	
-//	public Dog() {	//¹w³]«Øºc¤èªk Åv­­(public) Ãþ§O¦WºÙ(Dog)
+//	public Dog() {	//ï¿½wï¿½]ï¿½Øºcï¿½ï¿½k ï¿½vï¿½ï¿½(public) ï¿½ï¿½ï¿½Oï¿½Wï¿½ï¿½(Dog)
 //	
 //	}
 	
-					//¤èªk¦WºÙ¦PÃþ§O¦WºÙDog,¨S¦³¥ô¦óªº¦^¶Ç­È«¬ºA
-	public Dog() {	//¨Ï¥ÎSource²£¥Í¹w³]«Øºc¤èªk,ÂI­Ë¼Æ²Ä¤G­ÓGenerate
-		super();	//super()¥Î¦bÄ~©Ó ¤lÃþ§O©I¥s¤÷Ãþ§O¨Ï¥Îsuper
+					//ï¿½ï¿½kï¿½Wï¿½Ù¦Pï¿½ï¿½ï¿½Oï¿½Wï¿½ï¿½Dog,ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½óªº¦^ï¿½Ç­È«ï¿½ï¿½A
+	public Dog() {	//ï¿½Ï¥ï¿½Sourceï¿½ï¿½ï¿½Í¹wï¿½]ï¿½Øºcï¿½ï¿½k,ï¿½Iï¿½Ë¼Æ²Ä¤Gï¿½ï¿½Generate
+		super();	//super()ï¿½Î¦bï¿½~ï¿½ï¿½ ï¿½lï¿½ï¿½ï¿½Oï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Ï¥ï¿½super
 	}
 				
-	//¥u­n¥Í¦¨±a¦³ÄÝ©Ê(°Ñ¼Æ)ªº«Øºc¤èªk¤W­±ªº¹w³]«Øºc¤èªk¤@©w­n²£¥Í
-	public Dog(String name, String color, int age) { //±a¦³ÄÝ©Ê(°Ñ¼Æ)ªº«Øºc¤èªk
+	//ï¿½uï¿½nï¿½Í¦ï¿½ï¿½aï¿½ï¿½ï¿½Ý©ï¿½(ï¿½Ñ¼ï¿½)ï¿½ï¿½ï¿½Øºcï¿½ï¿½kï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½wï¿½]ï¿½Øºcï¿½ï¿½kï¿½@ï¿½wï¿½nï¿½ï¿½ï¿½ï¿½
+	public Dog(String name, String color, int age) { //ï¿½aï¿½ï¿½ï¿½Ý©ï¿½(ï¿½Ñ¼ï¿½)ï¿½ï¿½ï¿½Øºcï¿½ï¿½k
 	super();
 	this.name = name;
 	this.color = color;
 	this.age = age;
 	}
 
-	public String getName() {	//¥H¤U¤èªk¬°¤½¶}
+	public String getName() {	//ï¿½Hï¿½Uï¿½ï¿½kï¿½ï¿½ï¿½ï¿½ï¿½}
 		return name;
 	}
 
-	public void setName(String name) {	//¤èªk¤º¬°void¤£»Ý­nreturn,(¬°°Ñ¼Æ)
-		this.name = name; //this.«üªº¬O³o­ÓclassÃþ§ODog
+	public void setName(String name) {	//ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½voidï¿½ï¿½ï¿½Ý­nreturn,(ï¿½ï¿½ï¿½Ñ¼ï¿½)
+		this.name = name; //this.ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½oï¿½ï¿½classï¿½ï¿½ï¿½ODog
 	}
 
 	public String getColor() {
@@ -66,8 +66,8 @@ public class Dog implements RunService{ // public(³Q¨Ï¥ÎªºÅv­­³Ì¤j)¤èªk¤ºªºÅÜ¼Æ¤
 		System.out.println("===========================");
 	}
 
-	@Override	//¹ï¬õ³L°CDogÃþ§OÂIadd²£¥Íªº¤@­Ó¥i¥H­«·s©w¸qªº¤èªk
+	@Override	//ï¿½ï¿½ï¿½ï¿½Lï¿½CDogï¿½ï¿½ï¿½Oï¿½Iaddï¿½ï¿½ï¿½Íªï¿½ï¿½@ï¿½Ó¥iï¿½Hï¿½ï¿½ï¿½sï¿½wï¿½qï¿½ï¿½ï¿½ï¿½k
 	public void run() {
-		System.out.println("ª¯¨à¦b©b¶]");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½bï¿½bï¿½]");
 	}
 }

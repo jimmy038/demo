@@ -268,4 +268,25 @@ public class StringTest {
 		String[] strArray = str.split("");
 		System.out.println(new ArrayList<>(Arrays.asList(strArray)));	
 	}
+	
+	@Test //String為一個類別class
+	public void stringTEST() {
+		String str ="ABC";      	    //→使用等號給予值只會存在一個記憶體空間,產生一個特殊記憶體空間為字串池(String Pool)
+		String str1 = new String("ABC");//→使用new 類別,只要看到new就是給予一個新的記憶體空間
+		String str2 ="ABC";				//→後續若用等號給予值就會進到字串池內去找
+//		str = "AB";						//會再進到字串池中,但原本的str字串給予的"ABC"不會消失
+		System.out.println(str == str1 );
+		System.out.println(str == str2 );
+		System.out.println("================================");
+//		Java內的字串比較使用	equals,System.out.println(str.equals(str1));
+		System.out.println(str.equals(str1));
+		System.out.println(str.equals(str2));
+		System.out.println("================================");
+		String str3 = "aBC";
+		System.out.println(str.equals(str3));
+//		equalsIgnoreCase不看大小寫只要是abc(ABC)都為true		
+		System.out.println(str.equalsIgnoreCase(str3));
+		System.out.println("================================");
+	}
+	
 }

@@ -16,7 +16,7 @@ public class ClassTest {
 
 	@Test
 	public void classTest() {
-		Dog yourDog = new Dog(); //«Å§iDog«e­±¬OclassÃş§O,±µµÛdogÅÜ¼Æ
+		Dog yourDog = new Dog(); 
 		System.out.println(yourDog.getName());
 		yourDog.setName("cat");
 		System.out.println("===============================");
@@ -25,7 +25,7 @@ public class ClassTest {
 		myDog.setName("Monkey");
 		System.out.println(yourDog.getName());
 		System.out.println(myDog.getName());
-//		String name = dog.getName();//±µ¦^°Ñ¼Æ±µ¦^dog¸Ì­±ªºname
+//		String name = dog.getName();//ï¿½ï¿½ï¿½^ï¿½Ñ¼Æ±ï¿½ï¿½^dogï¿½Ì­ï¿½ï¿½ï¿½name
 		System.out.println("===============================");
 	}
 	
@@ -36,12 +36,12 @@ public class ClassTest {
 		System.out.println("====================");
 	}
 	
-	@Test	//@Test³q±`®³¨ÓÅçÃÒ¼gªº¤èªk¥¿½T©Ê»P§_
+	@Test	//@Testï¿½qï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼gï¿½ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½Tï¿½Ê»Pï¿½_
 	public void classTest2() {
 		TaipeiBank bank = new TaipeiBank();
 		System.out.println(bank.getBalance());
-		//¡õAssert.isTrue§PÂ_µ²ªG¬O§_¬°¯u,¤º»İ­n©ñ¨â­Ó°Ñ¼Æ,²Ä¤@­Ó°Ñ¼Æ¬°§PÂ_¦¡,²Ä¤G­Ó°Ñ¼Æ¬°·í«e­±ªº§PÂ_¦¡¤£¬O§A­nªºµ²ªG®É§A­n¦^¶Çªº¸ê°Tµ¹¤©¥L
-		Assert.isTrue(bank.getBalance() == 1000, "saving error!!"); //ÅçÃÒ¼gªº¤èªk¬O§_¥¿½T:Assert.isTrue(§PÂ_¬O§_¥¿½T)
+		//åˆ¤æ–·æ˜¯å¦æ­£ç¢ºAssert.isTrue();
+		Assert.isTrue(bank.getBalance() == 1000, "saving error!!"); //ï¿½ï¿½ï¿½Ò¼gï¿½ï¿½ï¿½ï¿½kï¿½Oï¿½_ï¿½ï¿½ï¿½T:Assert.isTrue(ï¿½Pï¿½_ï¿½Oï¿½_ï¿½ï¿½ï¿½T)
 		
 		bank.saving(-500);
 		Assert.isTrue(bank.getBalance() == 1000, "saving error!!");
@@ -53,22 +53,22 @@ public class ClassTest {
 	}
 	
 	@Test
-	public void classTest3() { //¼gwithdarw(´£´Ú)
-		Scanner scan = new Scanner(System.in);	//Scanner¹³¬O±½§Ú­Ì¿é¤JªºªF¦è­n±N¿é¤Jªº¦L¥X»İ(System.in)
-		System.out.println("±z¦nÅwªï¨Ï¥Î´£´Ú¾÷ :");
+	public void classTest3() { //ï¿½gwithdarw(ï¿½ï¿½ï¿½ï¿½)
+		Scanner scan = new Scanner(System.in);	//Scannerï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Ú­Ì¿ï¿½Jï¿½ï¿½ï¿½Fï¿½ï¿½nï¿½Nï¿½ï¿½Jï¿½ï¿½ï¿½Lï¿½Xï¿½ï¿½(System.in)
+		System.out.println("ï¿½zï¿½nï¿½wï¿½ï¿½Ï¥Î´ï¿½ï¿½Ú¾ï¿½ :");
 		String inputInt = scan.next();
 		TaipeiBank bank1 = new TaipeiBank();
 		bank1.withdarw(0);
 		System.out.println(bank1.getBalance());
-		//¡õAssert.isTrue§PÂ_µ²ªG¬O§_¬°¯u,¤º»İ­n©ñ¨â­Ó°Ñ¼Æ,²Ä¤@­Ó°Ñ¼Æ¬°§PÂ_¦¡,²Ä¤G­Ó°Ñ¼Æ¬°·í«e­±ªº§PÂ_¦¡¤£¬O§A­nªºµ²ªG®É§A­n¦^¶Çªº¸ê°Tµ¹¤©¥L
-		Assert.isTrue(bank1.getBalance() ==1000, "ÁÙ·Q»âªü!!");
+		//ï¿½ï¿½Assert.isTrueï¿½Pï¿½_ï¿½ï¿½ï¿½Gï¿½Oï¿½_ï¿½ï¿½ï¿½u,ï¿½ï¿½ï¿½İ­nï¿½ï¿½ï¿½Ó°Ñ¼ï¿½,ï¿½Ä¤@ï¿½Ó°Ñ¼Æ¬ï¿½ï¿½Pï¿½_ï¿½ï¿½,ï¿½Ä¤Gï¿½Ó°Ñ¼Æ¬ï¿½ï¿½ï¿½eï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½Aï¿½nï¿½ï¿½ï¿½ï¿½ï¿½Gï¿½É§Aï¿½nï¿½^ï¿½Çªï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½ï¿½ï¿½L
+		Assert.isTrue(bank1.getBalance() ==1000, "ï¿½Ù·Qï¿½ï¿½ï¿½!!");
 		
 		bank1.withdarw(500);
-		Assert.isTrue(bank1.getBalance() ==500, " §O»â¤F¦Ñ¥S!!");
+		Assert.isTrue(bank1.getBalance() ==500, " ï¿½Oï¿½ï¿½Fï¿½Ñ¥S!!");
 		System.out.println(bank1.getBalance());
 		
 		bank1.withdarw(1000);
-		Assert.isTrue(bank1.getBalance() == 0, " ¨S¿ú°ÕÄ_¨© !!");
+		Assert.isTrue(bank1.getBalance() == 0, " ï¿½Sï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ !!");
 		System.out.println(bank1.getBalance());
 		System.out.println("====================");
 	}
@@ -83,28 +83,28 @@ public class ClassTest {
 	
 	@Test
 	public void classTest6() {
-		Dog dog = new Dog(); //¦³¤p¬A¸¹³£¬O¤èªk
+		Dog dog = new Dog(); //ï¿½ï¿½ï¿½pï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½k
 		dog.setName("Lily");
 		dog.setColor("blue");
 		dog.setAge(2);
 		System.out.println("=============================");
-		Dog dogg = new Dog("QQQQ","GGG", 3); //µ¥¦P©ó¤W­±¤T¦æsetÄİ©ÊªºÂ²¼g,ª½±µ¦b«Øºc¤èªk¤ºSetÄİ©Ê
+		Dog dogg = new Dog("QQQQ","GGG", 3); //ï¿½ï¿½ï¿½Pï¿½ï¿½Wï¿½ï¿½ï¿½Tï¿½ï¿½setï¿½İ©Êªï¿½Â²ï¿½g,ï¿½ï¿½ï¿½ï¿½ï¿½bï¿½Øºcï¿½ï¿½kï¿½ï¿½Setï¿½İ©ï¿½
 		System.out.println(dogg);
 		System.out.println("=============================");
 	}
 	
 	@Test
-	public void classTest7() { //¨Ï¥Îstatic¤èªk,static¥Ã»·¥u¦s¦b¤@²Õ°O¾ĞÅéªÅ¶¡
+	public void classTest7() { //ï¿½Ï¥ï¿½staticï¿½ï¿½k,staticï¿½Ã»ï¿½ï¿½uï¿½sï¿½bï¿½@ï¿½Õ°Oï¿½ï¿½ï¿½ï¿½Å¶ï¿½
 		Dog dog = new Dog();
-		dog.setAttributes();  //¤@¯ë¤èªkªº©I¥s,¥²¶·­n¥ı§âÃş§Onew¥X¨Ó
+		dog.setAttributes();  //ï¿½@ï¿½ï¿½ï¿½kï¿½ï¿½ï¿½Iï¿½s,ï¿½ï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Onewï¿½Xï¿½ï¿½
 		
-		Dog.setAttributes2(); //static¤èªkªº©I¥s,ª½±µ¨Ï¥ÎÃş§O¦WºÙÂI.static ¤èªk,§Y¥i¤£»İ­nnew
+		Dog.setAttributes2(); //staticï¿½ï¿½kï¿½ï¿½ï¿½Iï¿½s,ï¿½ï¿½ï¿½ï¿½ï¿½Ï¥ï¿½ï¿½ï¿½ï¿½Oï¿½Wï¿½ï¿½ï¿½I.static ï¿½ï¿½k,ï¿½Yï¿½iï¿½ï¿½ï¿½İ­nnew
 		System.out.println("=============================");
 		Math.random();		 
 		Random ran = new Random();
 		ran.nextInt();
 		System.out.println("=============================");
-		final int b =50; //final³]©w§¹­È«áµLªk¦A³Q§ó§ï
+		final int b =50; //finalï¿½]ï¿½wï¿½ï¿½ï¿½È«ï¿½Lï¿½kï¿½Aï¿½Qï¿½ï¿½ï¿½
 //		b=100;
 	}
 }

@@ -1,9 +1,9 @@
 package com.example.demo.entity;
 
-//«Ø¥ß°õ¦æºü ¡V Ä~©Ó Thread Ãþ§O
+//ï¿½Ø¥ß°ï¿½ï¿½ï¿½ï¿½ ï¿½V ï¿½~ï¿½ï¿½ Thread ï¿½ï¿½ï¿½O
 public class HorseRacing extends Thread{
 
-	//«Øºc¤èªk
+	//ï¿½Øºcï¿½ï¿½k
 	public HorseRacing(String name) {
 		super(name);
 	}
@@ -11,7 +11,7 @@ public class HorseRacing extends Thread{
 	@Override
 	public void run() {
 		for(int i = 1; i <= 5 ; i++) {
-			System.out.println(getName() + "¥Ø«e¥¿¦b¶]²Ä" + i + "°é");
+			System.out.println(getName() + "ï¿½Ø«eï¿½ï¿½ï¿½bï¿½]ï¿½ï¿½" + i + "ï¿½ï¿½");
 		}
 		try {
 			Thread.sleep(3000);

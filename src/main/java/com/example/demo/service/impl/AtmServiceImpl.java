@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,99 +18,87 @@ import com.example.demo.vo.AtmResponse;
 @Service
 public class AtmServiceImpl implements AtmService {
 	
-	//ª½±µ«Å§i¦¨private,¦b¤U­±¦A¨Ï¥ÎencoderÅÜ¼Æ,´N¤£¥Î­«·snew
+	//é¡å¤–æŠ½å‡ºè®Šæˆç§æœ‰æ–¹æ³•
 	private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 	@Autowired
 	private AtmDao atmDao;
 	
-	//		   ¡õ­n¹ï¤èªk¼È¦s¸ê®Æ,cacheNamesµ¥¦Pvalue¡õ¹ïÀ³¨ì()¤ºªºaccountÅÜ¼Æ,	unless(±Æ°£)±Æ°£200¤§¥~,¤Ï¤§¥u¦s200ªº
-	@Override //¼gSession,Session¬OÀx¦s¦b¦øªA¾¹ºİ(Server)ªº¼È¦s¸ê®Æ
+	@Override //ï¿½gSession,Sessionï¿½Oï¿½xï¿½sï¿½bï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½ï¿½(Server)ï¿½ï¿½ï¿½È¦sï¿½ï¿½ï¿½
 	public AtmResponse login(String account, String pwd) {
-//		¡õ¦¹¦æÀË¬d¶Ç¤Jªº±b¸¹©M±K½X¬O§_¬°ªÅ©ÎªÌ¨S¦³¤å¦r¡]ªÅ¥Õ¡^¡C¦pªG¨ä¤¤¥ô¦ó¤@­Ó¬°ªÅ©Î¨S¦³¤å¦r¡Aªğ¦^¤@­Ó¥Nªí°Ñ¼Æ¿ù»~ªºAtmResponse ª«¥ó¤º¨Ï¥ÎªºRtnCode.PARAM_ERROR³o­Ó¥N½X¡C		
 		if (!StringUtils.hasText(account) || !StringUtils.hasText(pwd)) {
-//			¡õ·í°Ñ¼Æ±b±K¿ù»~®É­n¦^´_ªº¿ù»~°T®§,¥ı¥hnew AtmResponseªºÃş§O(ª«¥ó),¦A±a¤JRtnCode¤ºªº®æ¦¡¿ù»~ªº¸ê°T
-			return new AtmResponse(null, RtnCode.PARAM_ERROR); //null¬°atm,«á­±´N¦^RtnCode
+			return new AtmResponse(null, RtnCode.PARAM_ERROR); //nullï¿½ï¿½atm,ï¿½á­±ï¿½Nï¿½^RtnCode
 		}
-//		¡õ¦b¸ê®Æ®w¤¤´M§ä«ü©w±b¸¹¡]account¡^ªº ATM ¸ê®Æ¡C
 		Optional<Atm> op = atmDao.findById(account); 
-//		¡õ¦pªG¦b¸ê®Æ®w¤¤§ä¤£¨ì±b¸¹¡A·|ªğ¦^¤@­Ó¥Nªí±b¸¹¤£¦s¦bªºAtmResponseª«¥ó¡A¥ÎRtnCode¤ºªºACCOUNT_NOT_FOUND³o­Ó¥N½X¡C		
 		if(op.isEmpty()) { 
 			return new AtmResponse(null,RtnCode.ACCOUNT_NOT_FOUND); 
 		}
-//		¡õ¦pªG§ä¨ì¤F±b¸¹¡A·|ÀË¬d¶Ç¤Jªº±K½X¬O§_»P¸ê®Æ®w¤¤¸Ó±b¸¹ªº¥[±K±K½X¤Ç°t¡C¨Ï¥Îencoder¡A¨Ã¤ñ¹ï¶Ç¤Jªº±K½X»P¸ê®Æ®w¤¤ªº¥[±K±K½X¡C¦pªG¤£¤Ç°t¡A«hªğ¦^¤@­Ó¥Nªíµn¤J¿ù»~ªºAtmResponseª«¥ó¡A¨Ï¥ÎRtnCode.LOGIN_ERROR ³o­Ó¥N½X¡C				
 		if(!encoder.matches(pwd, op.get().getPwd())) {
 			return new AtmResponse(null,RtnCode.LOGIN_ERROR);
 		}
-//		¡õ¦pªG±b¸¹©M±K½XÅçÃÒ³£¦¨¥\¡Aªğ¦^¤@­Ó¥Nªíµn¤J¦¨¥\ªºAtmResponseª«¥ó¡A¨Ï¥ÎRtnCode.SUCCESSFUL³o­Ó¥N½X¡C		
 		return new AtmResponse(null,RtnCode.SUCCESSFUL);
 	}
 	
 	
-	@Override //§¹¾ãªº¤èªk ¦³¦^¶Ç¦WºÙ¦³°Ñ¼Æ¦³ÅŞ¿è¤Î±K½X¥[±K,²Ä¤@¨B³£¬OÀË¬d°Ñ¼Æ¤£¯à¬°null,ªÅ¦r¦ê,ªÅ¥Õ 
+	@Override //ï¿½ï¿½ï¿½ãªºï¿½ï¿½k ï¿½ï¿½ï¿½^ï¿½Ç¦Wï¿½Ù¦ï¿½ï¿½Ñ¼Æ¦ï¿½ï¿½Ş¿ï¿½Î±Kï¿½Xï¿½[ï¿½K,ï¿½Ä¤@ï¿½Bï¿½ï¿½ï¿½Oï¿½Ë¬dï¿½Ñ¼Æ¤ï¿½ï¿½à¬°null,ï¿½Å¦rï¿½ï¿½,ï¿½Å¥ï¿½ 
 	public AtmResponse addInfo(String account, String pwd) {
-		//ÀË¬d¦r¦ê¬O§_¬°ªÅ,null,ªÅ¥Õ³£¬O¨Ï¥ÎStringUtils.hasText,||¬°or²Å¸¹
+		//ï¿½Ë¬dï¿½rï¿½ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½,null,ï¿½Å¥Õ³ï¿½ï¿½Oï¿½Ï¥ï¿½StringUtils.hasText,||ï¿½ï¿½orï¿½Å¸ï¿½
 		if (!StringUtils.hasText(account) || !StringUtils.hasText(pwd)) {
-//			¡õ·í°Ñ¼Æ±b±K¿ù»~®É­n¦^´_ªº¿ù»~°T®§,¥ı¥hnew AtmResponseªºÃş§O,±µµÛ±a¤J®æ¦¡¿ù»~ªº¸ê°T
-			return new AtmResponse(null, RtnCode.PARAM_ERROR); //null¬°atm,«á­±´N¦^RtnCode
+//			ï¿½ï¿½ï¿½ï¿½Ñ¼Æ±bï¿½Kï¿½ï¿½ï¿½~ï¿½É­nï¿½^ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½~ï¿½Tï¿½ï¿½,ï¿½ï¿½ï¿½hnew AtmResponseï¿½ï¿½ï¿½ï¿½ï¿½O,ï¿½ï¿½ï¿½Û±aï¿½Jï¿½æ¦¡ï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½ï¿½T
+			return new AtmResponse(null, RtnCode.PARAM_ERROR); //nullï¿½ï¿½atm,ï¿½á­±ï¿½Nï¿½^RtnCode
 		}
-		if (atmDao.existsById(account)) { //§PÂ_±b¸¹¬O§_¦s¦b
+		if (atmDao.existsById(account)) { //ï¿½Pï¿½_ï¿½bï¿½ï¿½ï¿½Oï¿½_ï¿½sï¿½b
 			return new AtmResponse(null, RtnCode.ACCOUNT_EXISTED);
 		}
-		//BCryptPasswordEncoder±K½X¥[±K¬°±K¤å
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Atm res = atmDao.save(new Atm(account, encoder.encode(pwd))); //¦]atm³QAtmResponse¥]¦í,©Ò¥H­n¥ı¥Îdao.save,()¤º¦A¥hnew Atm
-		//¤£·Q¦^¶Çpwd,§â±K½X³]©w¦¨ªÅ¦r¦ê,©Ò¥H±a¤JªÅ¦r¦ê	encoter.encode(pwd)±K½X¥[±K
+		Atm res = atmDao.save(new Atm(account, encoder.encode(pwd))); //ï¿½]atmï¿½QAtmResponseï¿½]ï¿½ï¿½,ï¿½Ò¥Hï¿½nï¿½ï¿½ï¿½ï¿½dao.save,()ï¿½ï¿½ï¿½Aï¿½hnew Atm
 		res.setPwd("");
-		return new AtmResponse(res, RtnCode.SUCCESSFUL); //¸ê®ÆÅçÃÒ¦¨¥\«á¦s¤J,µ¹¤©¥¿½T°T®§
+		return new AtmResponse(res, RtnCode.SUCCESSFUL); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¦ï¿½ï¿½\ï¿½ï¿½sï¿½J,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Tï¿½Tï¿½ï¿½
 	}
 
 	@Cacheable(cacheNames = "atm_get_balance",key = "#account", unless = "#result.rtnCode.code != 200")	
-	@Override //²Ä¤@¥ó¨ÆÀË¬d°Ñ¼Æ
+	@Override 
 	public AtmResponse getBalanceByAccount(String account,String pwd) {
 		if(!StringUtils.hasText(account)) {
 			return new AtmResponse(null, RtnCode.PARAM_ERROR);	
 		}
-		Optional<Atm> op = atmDao.findById(account);//findById¬°Jpa¦Û¤v´£¨Ñ¤èªk,¥L³oÃä³QOptional¥]¦í
-		if(op.isEmpty()) {	//§PÂ_±b¸¹¬O§_¦s¦b
+		Optional<Atm> op = atmDao.findById(account);
+		if(op.isEmpty()) {	//ï¿½Pï¿½_ï¿½bï¿½ï¿½ï¿½Oï¿½_ï¿½sï¿½b
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
-		Atm res = op.get(); //±qOptional§âAtm³o­Óª«¥ó¨ú¥X¥ı¨Ï¥Î.get,get Atm³o­Óª«¥ó
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//¥[±Kªº±K½X
-		//­n¥h¤ñ¹ï¥[±Kªº±K½X,­n¥Î¤W­±ªºÅÜ¼Æencoter.matches(pwd, res.getPwed) pwd­ì¥»ªº±K½Xres.getPwd()¥[±K«áªº±K½X¥h°µ¤ñ¹ï
-		if(!encoder.matches(pwd, res.getPwd())) { //¦pªG¤£matchªº¸Ü¦^´_ACCOUNT_NOT_FOUND,¦]«e­±¦³!
+		Atm res = op.get(); //ï¿½qOptionalï¿½ï¿½Atmï¿½oï¿½Óªï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Ï¥ï¿½.get,get Atmï¿½oï¿½Óªï¿½ï¿½ï¿½
+		if(!encoder.matches(pwd, res.getPwd())) { 
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
 		res.setPwd("");
-		return new AtmResponse(res, RtnCode.SUCCESSFUL); //¦¨¥\¦s¤Jªº¸ê°T
+		return new AtmResponse(res, RtnCode.SUCCESSFUL); 
 	}
 	
 
-	@Override //²Ä¤@¥ó¨ÆÀË¬d°Ñ¼Æ,²Ä¤G¨BÀË¬d±b¸¹¦s¤£¦s¦b,
+	@Override //ï¿½Ä¤@ï¿½ï¿½ï¿½ï¿½Ë¬dï¿½Ñ¼ï¿½,ï¿½Ä¤Gï¿½Bï¿½Ë¬dï¿½bï¿½ï¿½ï¿½sï¿½ï¿½ï¿½sï¿½b,
 	public AtmResponse updatePwd(String account, String pwd, String oldPwd, String newPwd) {
 		if(!StringUtils.hasText(account) || !StringUtils.hasText(oldPwd) || !StringUtils.hasText(newPwd)) {
 			return new AtmResponse(null,RtnCode.PARAM_ERROR);
 		}
-		Optional<Atm> op = atmDao.findById(account);//findById¬°Jpa¦Û¤v´£¨Ñ¤èªk,¥L³QOptional¥]¦í
-		if(op.isEmpty()) {	//§PÂ_±b¸¹¬O§_¦s¦b,¦pªG¬°ªÅ·|¶i¤J¤U­±¨º¦æµ{¦¡½X,¦^¶ÇAccount not found
+		Optional<Atm> op = atmDao.findById(account);//findByIdï¿½ï¿½Jpaï¿½Û¤vï¿½ï¿½ï¿½Ñ¤ï¿½k,ï¿½Lï¿½QOptionalï¿½]ï¿½ï¿½
+		if(op.isEmpty()) {	//ï¿½Pï¿½_ï¿½bï¿½ï¿½ï¿½Oï¿½_ï¿½sï¿½b,ï¿½pï¿½Gï¿½ï¿½ï¿½Å·|ï¿½iï¿½Jï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½ï¿½X,ï¿½^ï¿½ï¿½Account not found
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
-		Atm res = op.get(); //§âOptional§â³Q¥]°_¨Óªºª«¥óAtm¨ú¥X¨Ï¥Î.get,get Atm³o­Óª«¥ó
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//¥[±Kªº±K½X
-		//­n¥h¤ñ¹ï¥[±Kªº±K½X,­n¥Î¤W­±ªºÅÜ¼Æencoter.matches(pwd, res.getPwed) pwd­ì¥»ªº±K½Xres.getPwd()¥[±K«áªº±K½X¥h°µ¤ñ¹ï
+		Atm res = op.get(); //ï¿½ï¿½Optionalï¿½ï¿½Qï¿½]ï¿½_ï¿½Óªï¿½ï¿½ï¿½ï¿½ï¿½Atmï¿½ï¿½ï¿½Xï¿½Ï¥ï¿½.get,get Atmï¿½oï¿½Óªï¿½ï¿½ï¿½
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//ï¿½[ï¿½Kï¿½ï¿½ï¿½Kï¿½X
+		//ï¿½nï¿½hï¿½ï¿½ï¿½[ï¿½Kï¿½ï¿½ï¿½Kï¿½X,ï¿½nï¿½Î¤Wï¿½ï¿½ï¿½ï¿½ï¿½Ü¼ï¿½encoter.matches(pwd, res.getPwed) pwdï¿½ì¥»ï¿½ï¿½ï¿½Kï¿½Xres.getPwd()ï¿½[ï¿½Kï¿½áªºï¿½Kï¿½Xï¿½hï¿½ï¿½ï¿½ï¿½ï¿½
 		if(!encoder.matches(oldPwd, res.getPwd())) {
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
-		res.setPwd(encoder.encode(newPwd));//­n¦A¹ï·s±K½X¥[±K
-		atmDao.save(res);//¥[±K¹L«áªº¸ê®Æ¾ãµ§¥á¦^¸ê®Æ®w¦s¤J
-		res.setPwd("");	 //¾B½ª±K½XÅÜ¦¨ªÅ¦r¦ê
+		res.setPwd(encoder.encode(newPwd));//ï¿½nï¿½Aï¿½ï¿½sï¿½Kï¿½Xï¿½[ï¿½K
+		atmDao.save(res);//ï¿½[ï¿½Kï¿½Lï¿½áªºï¿½ï¿½Æ¾ãµ§ï¿½ï¿½^ï¿½ï¿½Æ®wï¿½sï¿½J
+		res.setPwd("");	 //ï¿½Bï¿½ï¿½ï¿½Kï¿½Xï¿½Ü¦ï¿½ï¿½Å¦rï¿½ï¿½
 		return new AtmResponse(res, RtnCode.SUCCESSFUL);
 	}
 
 	
-	@Override //¦s´Ú
+	@Override //ï¿½sï¿½ï¿½
 	public AtmResponse deposit(String account, String pwd,int amount) {
-//		!StringUtils.hasText§PÂ_¨â­Ó±ø¥ó¨ä¤¤¤@­Ó¦pªG¬°¯u®É,´N·|¦^¶ÇParam_error!!¿ù»~°T®§
+//		!StringUtils.hasTextï¿½Pï¿½_ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ä¤¤ï¿½@ï¿½Ó¦pï¿½Gï¿½ï¿½ï¿½uï¿½ï¿½,ï¿½Nï¿½|ï¿½^ï¿½ï¿½Param_error!!ï¿½ï¿½ï¿½~ï¿½Tï¿½ï¿½
 		if(!StringUtils.hasText(account) || !StringUtils.hasText(pwd)|| amount <= 0) {
 			return new AtmResponse(null, RtnCode.PARAM_ERROR);
 		}
@@ -117,20 +106,20 @@ public class AtmServiceImpl implements AtmService {
 		if(op.isEmpty()) {
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
-		Atm res = op.get(); //±qOptional§âAtm¨ú¥X,¨Ï¥Î.get,get Atm³o­Óª«¥ó
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//¥[±Kªº±K½X
-		//­n¥h¤ñ¹ï¥[±Kªº±K½X,­n¥Î¤W­±ªºÅÜ¼Æencoder.matches(pwd, res.getPwed) pwd­ì¥»ªº±K½Xres.getPwd()¥[±K«áªº±K½X¥h°µ¤ñ¹ï
+		Atm res = op.get(); //ï¿½qOptionalï¿½ï¿½Atmï¿½ï¿½ï¿½X,ï¿½Ï¥ï¿½.get,get Atmï¿½oï¿½Óªï¿½ï¿½ï¿½
+//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//ï¿½[ï¿½Kï¿½ï¿½ï¿½Kï¿½X
+		//ï¿½nï¿½hï¿½ï¿½ï¿½[ï¿½Kï¿½ï¿½ï¿½Kï¿½X,ï¿½nï¿½Î¤Wï¿½ï¿½ï¿½ï¿½ï¿½Ü¼ï¿½encoder.matches(pwd, res.getPwed) pwdï¿½ì¥»ï¿½ï¿½ï¿½Kï¿½Xres.getPwd()ï¿½[ï¿½Kï¿½áªºï¿½Kï¿½Xï¿½hï¿½ï¿½ï¿½ï¿½ï¿½
 		if(!encoder.matches(pwd, res.getPwd())) {
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
-		res.setBalance(res.getBalance()+ amount);//­n¦A¹ï·s±K½X¥[±K
-		atmDao.save(res);//¥[±K¹L«áªº¸ê®Æ¾ãµ§¥á¦^¸ê®Æ®w¦s¤J
-		res.setPwd("");	 //¾B½ª±K½XÅÜ¦¨ªÅ¦r¦ê
+		res.setBalance(res.getBalance()+ amount);//ï¿½nï¿½Aï¿½ï¿½sï¿½Kï¿½Xï¿½[ï¿½K
+		atmDao.save(res);//ï¿½[ï¿½Kï¿½Lï¿½áªºï¿½ï¿½Æ¾ãµ§ï¿½ï¿½^ï¿½ï¿½Æ®wï¿½sï¿½J
+		res.setPwd("");	 //ï¿½Bï¿½ï¿½ï¿½Kï¿½Xï¿½Ü¦ï¿½ï¿½Å¦rï¿½ï¿½
 		return new AtmResponse(res, RtnCode.SUCCESSFUL);
 	}
 
 	
-	@Override	//´£´Ú
+	@Override	//ï¿½ï¿½ï¿½ï¿½
 	public AtmResponse withdraw(String account, String pwd, int amount) {
 		if(!StringUtils.hasText(account) || !StringUtils.hasText(pwd)|| amount <= 0) {
 			return new AtmResponse(null, RtnCode.PARAM_ERROR);
@@ -139,20 +128,20 @@ public class AtmServiceImpl implements AtmService {
 		if(op.isEmpty()) {
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
-		Atm res = op.get(); //±qOptional§âAtm¨ú¥X¥ı¨Ï¥Î.get,get Atm³o­Óª«¥ó
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//¥[±Kªº±K½X
-		//¥h¤ñ¹ï¥[±Kªº±K½X,­n¥Î¤W­±ªºÅÜ¼Æencoder.matches(pwd, res.getPwed) pwd­ì¥»ªº±K½Xres.getPwd()¥[±K«áªº±K½X¥h°µ¤ñ¹ï
-		if(!encoder.matches(pwd, res.getPwd())) {	//­ì¥»±K½X¤ñ¹ï¥[±K«áªº±K½X
+		Atm res = op.get(); //ï¿½qOptionalï¿½ï¿½Atmï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Ï¥ï¿½.get,get Atmï¿½oï¿½Óªï¿½ï¿½ï¿½
+//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();//ï¿½[ï¿½Kï¿½ï¿½ï¿½Kï¿½X
+		//ï¿½hï¿½ï¿½ï¿½[ï¿½Kï¿½ï¿½ï¿½Kï¿½X,ï¿½nï¿½Î¤Wï¿½ï¿½ï¿½ï¿½ï¿½Ü¼ï¿½encoder.matches(pwd, res.getPwed) pwdï¿½ì¥»ï¿½ï¿½ï¿½Kï¿½Xres.getPwd()ï¿½[ï¿½Kï¿½áªºï¿½Kï¿½Xï¿½hï¿½ï¿½ï¿½ï¿½ï¿½
+		if(!encoder.matches(pwd, res.getPwd())) {	//ï¿½ì¥»ï¿½Kï¿½Xï¿½ï¿½ï¿½[ï¿½Kï¿½áªºï¿½Kï¿½X
 			return new AtmResponse(null, RtnCode.ACCOUNT_NOT_FOUND);	
 		}
-		//ÀË¬d¾lÃB¤j©ó´£´Úª÷ÃB
+		//ï¿½Ë¬dï¿½lï¿½Bï¿½jï¿½ó´£´Úªï¿½ï¿½B
 		if(res.getBalance() < amount) {
 			res.setPwd("");
 			return new AtmResponse(null, RtnCode.INSUFFICIENT_BLANCE);	
 		}
 		res.setBalance(res.getBalance() - amount);
-		atmDao.save(res);//¥[±K¹L«áªº¸ê®Æ¾ãµ§¥á¦^¸ê®Æ®w¦s¤J
-		res.setPwd("");	 //¾B½ª±K½XÅÜ¦¨ªÅ¦r¦ê
+		atmDao.save(res);//ï¿½[ï¿½Kï¿½Lï¿½áªºï¿½ï¿½Æ¾ãµ§ï¿½ï¿½^ï¿½ï¿½Æ®wï¿½sï¿½J
+		res.setPwd("");	 //ï¿½Bï¿½ï¿½ï¿½Kï¿½Xï¿½Ü¦ï¿½ï¿½Å¦rï¿½ï¿½
 		return new AtmResponse(res, RtnCode.SUCCESSFUL);
 	}
 

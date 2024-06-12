@@ -1,13 +1,13 @@
 package com.example.demo.entity;
 
-public class Animal{	//¤@­Ó¤÷Ãþ§O¥i¥H³Q¦h­Ó¤lÃþ§OÄ~©Ó
+public class Animal{	//ï¿½@ï¿½Ó¤ï¿½ï¿½ï¿½ï¿½Oï¿½iï¿½Hï¿½Qï¿½hï¿½Ó¤lï¿½ï¿½ï¿½Oï¿½~ï¿½ï¿½
 	
-	private String name = "Fa";	//«Ø¥ßÄÝ©Ê,¹w³]µ¹­ÈFa
+	private String name = "Fa";	//ï¿½Ø¥ï¿½ï¿½Ý©ï¿½,ï¿½wï¿½]ï¿½ï¿½ï¿½ï¿½Fa
 	
 	
-	public Animal() {	//²£¥Í¹w³]«Øºc¤èªk
+	public Animal() {	//ï¿½ï¿½ï¿½Í¹wï¿½]ï¿½Øºcï¿½ï¿½k
 		super();
-		System.out.println("Animal «Øºc¤èªk");
+		System.out.println("Animal ï¿½Øºcï¿½ï¿½k");
 	}
 
 	public String getName() {
@@ -19,11 +19,11 @@ public class Animal{	//¤@­Ó¤÷Ãþ§O¥i¥H³Q¦h­Ó¤lÃþ§OÄ~©Ó
 	}
 	
 	public void eat() {
-		System.out.println(this.name + " ¥¿¦b¦Y!!");
+		System.out.println(this.name + " ï¿½ï¿½ï¿½bï¿½Y!!");
 	}
 	
 	public void sleep() {
-		System.out.println(this.name + " ¥¿¦bºÎ!!");
+		System.out.println(this.name + " ï¿½ï¿½ï¿½bï¿½ï¿½!!");
 	}
 	
 }

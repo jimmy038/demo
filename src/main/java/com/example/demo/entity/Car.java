@@ -2,12 +2,12 @@ package com.example.demo.entity;
 
 import com.example.demo.service.ifs.RunService;
 
-			//CarÃþ§O,¹ê§@(implements)¤¶­±(RunService)
+			//Carï¿½ï¿½ï¿½O,ï¿½ï¿½@(implements)ï¿½ï¿½ï¿½ï¿½(RunService)
 public class Car implements RunService{
 
 	@Override
-	public void run() {	//¹ï¬õ³L°CCarÃþ§O,ÂICarÃþ§Oªºadd«á²£¥Íªº­«·s©w¸q¤èªk
-		System.out.println("BMW¯uºw«Ó,Aitls°ê¥Á¯«¨®");
+	public void run() {	//ï¿½ï¿½ï¿½ï¿½Lï¿½CCarï¿½ï¿½ï¿½O,ï¿½ICarï¿½ï¿½ï¿½Oï¿½ï¿½addï¿½á²£ï¿½Íªï¿½ï¿½ï¿½ï¿½sï¿½wï¿½qï¿½ï¿½k
+		System.out.println("BMWï¿½uï¿½wï¿½ï¿½,Aitlsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 	}
 
 }

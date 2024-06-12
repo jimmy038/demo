@@ -4,20 +4,20 @@ import com.example.demo.vo.AtmResponse;
 
 public interface AtmService {
 	
-	//¼gSession,Session ¬OÀx¦s¦b¦øªA¾¹ºÝ(Server)ªº¸ê®Æ
+	//
 	public AtmResponse login(String account,String pwd);
 	
-	public AtmResponse addInfo(String account,String pwd); //()¡ö±a¤J±b¸¹±K½X
+	public AtmResponse addInfo(String account,String pwd); //()ï¿½ï¿½ï¿½aï¿½Jï¿½bï¿½ï¿½ï¿½Kï¿½X
 	
-	//ÀË¬d±b±K																			
-	public AtmResponse getBalanceByAccount(String account,String pwd);//Åã¥Ü¾lÃB­n¦³±b¸¹¸ê°T
+	//ï¿½Ë¬dï¿½bï¿½K																			
+	public AtmResponse getBalanceByAccount(String account,String pwd);//ï¿½ï¿½Ü¾lï¿½Bï¿½nï¿½ï¿½ï¿½bï¿½ï¿½ï¿½ï¿½T
 
-	public AtmResponse updatePwd(String account,String pwd,String oldPwd,String newPwd); //­×§ï±K½X¤èªk
+	public AtmResponse updatePwd(String account,String pwd,String oldPwd,String newPwd); //ï¿½×§ï¿½Kï¿½Xï¿½ï¿½k
 
-	//¦s´Údeposit		int amount¦s´Úª÷ÃB
+	//ï¿½sï¿½ï¿½deposit		int amountï¿½sï¿½Úªï¿½ï¿½B
 	public AtmResponse deposit(String account,String pwd,int amount);
 	
-	//´£´Úwithdraw	int amount´£´Úª÷ÃB
+	//ï¿½ï¿½ï¿½ï¿½withdraw	int amountï¿½ï¿½ï¿½Úªï¿½ï¿½B
 	public AtmResponse withdraw(String account,String pwd,int amount);
 
 	

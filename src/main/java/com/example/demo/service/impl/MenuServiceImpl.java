@@ -11,22 +11,22 @@ import com.example.demo.entity.Menu;
 import com.example.demo.repository.MenuDao;
 import com.example.demo.service.ifs.MenuService;
 
-//¹ê§@Ãþ§O¬°class¡C¤èªk´N¬°ServiceÃþ¡Cimpl¬°¹ï¤¶­±¸Ì­±ªºª«¥ó°µ¹ê§@(Ãþ§O¹ê§@ª«¥ó)¡C
+//ï¿½ï¿½@ï¿½ï¿½ï¿½Oï¿½ï¿½classï¿½Cï¿½ï¿½kï¿½Nï¿½ï¿½Serviceï¿½ï¿½ï¿½Cimplï¿½ï¿½ï¿½ï¤¶ï¿½ï¿½ï¿½Ì­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó°µ¹ï¿½@(ï¿½ï¿½ï¿½Oï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½)ï¿½C
 @Service 
-//¡ô@Service§Y¬°spring boot¤èªk¦«ºÞ,³Ì²×¶i¤J¹ê§@©Ò¥H­nÅýspring boot°UºÞ¦b¹ê§@(MenuServiceImpl)¡CService¤º¼gªºÅÞ¿è´N¬O¬°¤F¾Þ§@¸ê®Æ®w
+//ï¿½ï¿½@Serviceï¿½Yï¿½ï¿½spring bootï¿½ï¿½kï¿½ï¿½ï¿½ï¿½,ï¿½Ì²×¶iï¿½Jï¿½ï¿½@ï¿½Ò¥Hï¿½nï¿½ï¿½spring bootï¿½Uï¿½Þ¦bï¿½ï¿½@(MenuServiceImpl)ï¿½CServiceï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Þ¿ï¿½Nï¿½Oï¿½ï¿½ï¿½Fï¿½Þ§@ï¿½ï¿½Æ®w
 public class MenuServiceImpl implements MenuService{
-			//¡ô¹ï¤¶­±¹ê§@ªº¤èªk¡ô    			¡ô©w¸q¤¶­±¡ô
-	
-	//@ºÙ¬°annotation,³Qspring boot¦«ºÞªºª«¥ó®³¥X¨Ó¨Ï¥Î
+			//ï¿½ï¿½ï¿½ï¤¶ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½ï¿½kï¿½ï¿½    			ï¿½ï¿½ï¿½wï¿½qï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		
+	//@ï¿½Ù¬ï¿½annotation,ï¿½Qspring bootï¿½ï¿½ï¿½Þªï¿½ï¿½ï¿½ï¿½ó®³¥Xï¿½Ó¨Ï¥ï¿½
 	@Autowired
-	private MenuDao menuDao; //³Qspring boot¦«ºÞDAO®³¨Ó¨Ï¥Î
+	private MenuDao menuDao; //ï¿½Qspring bootï¿½ï¿½ï¿½ï¿½DAOï¿½ï¿½ï¿½Ó¨Ï¥ï¿½
 	
 	@Override
 	public Menu addMenu(Menu menu) {
-		if(!StringUtils.hasText(menu.getName()) || menu.getPrice() <= 0) { //§PÂ_¦r¦ê¬O§_¬°ªÅStringUtils.hasText«ü¦Vmenuªí®æ¤ºªºname
+		if(!StringUtils.hasText(menu.getName()) || menu.getPrice() <= 0) { //ï¿½Pï¿½_ï¿½rï¿½ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½StringUtils.hasTextï¿½ï¿½ï¿½Vmenuï¿½ï¿½æ¤ºï¿½ï¿½name
 			return null;
 		}
-		if(menuDao.existsById(menu.getName())) { //¦pªG¨ºµ§¬Û¦Pªº¸ê®Æ¤w¦s¦b¸ê®Æ¥²¶·¦^¶Çnull,¦]¬°³o­Ó¤èªk´N¬O³æ¯Âadd·s¼W¦Ó«Dupdate,­nÅýsave·s¼W¦Ó«D­×§ï¦P¤@µ§¸ê®Æ
+		if(menuDao.existsById(menu.getName())) { //ï¿½pï¿½Gï¿½ï¿½ï¿½ï¿½ï¿½Û¦Pï¿½ï¿½ï¿½ï¿½Æ¤wï¿½sï¿½bï¿½ï¿½Æ¥ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½null,ï¿½]ï¿½ï¿½ï¿½oï¿½Ó¤ï¿½kï¿½Nï¿½Oï¿½ï¿½ï¿½addï¿½sï¿½Wï¿½Ó«Dupdate,ï¿½nï¿½ï¿½saveï¿½sï¿½Wï¿½Ó«Dï¿½×§ï¿½Pï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½
 			return null;
 		}
 		return menuDao.save(menu);
@@ -40,13 +40,13 @@ public class MenuServiceImpl implements MenuService{
 				return null;
 			}
 		}
-		return menuDao.saveAll(menus); //¸õ¥X°j°é«áreturn saveAll¸ê®Æ
+		return menuDao.saveAll(menus); //ï¿½ï¿½ï¿½Xï¿½jï¿½ï¿½ï¿½return saveAllï¿½ï¿½ï¿½
 	}
 
 	
 	@Override
 	public Menu updateMenu(Menu menu) {
-		if (!StringUtils.hasText(menu.getName()) || menu.getPrice() <= 0) { //§PÂ_¦r¦ê¬O§_¬°ªÅStringUtils.hasText								// StringUtils.hasText«ü¦Vmenuªí®æ¤ºªºname
+		if (!StringUtils.hasText(menu.getName()) || menu.getPrice() <= 0) { //ï¿½Pï¿½_ï¿½rï¿½ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½StringUtils.hasText								// StringUtils.hasTextï¿½ï¿½ï¿½Vmenuï¿½ï¿½æ¤ºï¿½ï¿½name
 			return null;
 		}
 		if (menuDao.existsById(menu.getName())) {
@@ -59,15 +59,15 @@ public class MenuServiceImpl implements MenuService{
 	@Override
 	public Menu findByName(String name) {
 		Optional<Menu> op = menuDao.findById(name);
-//		­ì¥»ifªº¼gªk
-		if (op.isEmpty()) { // isEmpty§PÂ_¬O§_¬°ªÅ,¬°ªÅªº¸Üreturn null
-			return null; 	// ­Y°õ¦æ¶i¨Ó´Nreturn¦^¥h¤F,­Y¨S¶i¨Ó´N·|°õ¦æ¤U­±¨º¦æ
+//		ï¿½ì¥»ifï¿½ï¿½ï¿½gï¿½k
+		if (op.isEmpty()) { // isEmptyï¿½Pï¿½_ï¿½Oï¿½_ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Åªï¿½ï¿½ï¿½return null
+			return null; 	// ï¿½Yï¿½ï¿½ï¿½ï¿½iï¿½Ó´Nreturnï¿½^ï¿½hï¿½F,ï¿½Yï¿½Sï¿½iï¿½Ó´Nï¿½|ï¿½ï¿½ï¿½ï¿½Uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 		return op.get();
-		//¤T¤¸¹Bºâ¦¡¼gªk,µ¥¸¹«á­±±ø¥ó§PÂ_¦¡
+		//ï¿½Tï¿½ï¿½ï¿½Bï¿½â¦¡ï¿½gï¿½k,ï¿½ï¿½ï¿½ï¿½ï¿½á­±ï¿½ï¿½ï¿½ï¿½Pï¿½_ï¿½ï¿½
 //		Menu menu = op.isEmpty()? null : op.get();
 //		return menu;
-		//¤T¤¸¹Bºâ¦¡¼gªk,ªð¦^µ²ªG
+		//ï¿½Tï¿½ï¿½ï¿½Bï¿½â¦¡ï¿½gï¿½k,ï¿½ï¿½^ï¿½ï¿½ï¿½G
 //		return op.isEmpty()? null : op.get();
 		
 	}
@@ -75,6 +75,6 @@ public class MenuServiceImpl implements MenuService{
 	
 	@Override
 	public List<Menu> findAll() {
-		return menuDao.findAll(); //ª½±µ¦^¶ÇfindAll		
+		return menuDao.findAll(); //ï¿½ï¿½ï¿½ï¿½ï¿½^ï¿½ï¿½findAll		
 	}
 }

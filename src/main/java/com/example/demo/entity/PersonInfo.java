@@ -1,25 +1,25 @@
-package com.example.demo.entity; //entity¬°¸ê®Æ®w»Pµ{¦¡¤§¶¡ªº´C¤¶
+package com.example.demo.entity; //entityï¿½ï¿½ï¿½ï¿½Æ®wï¿½Pï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity	//Åýspring boot°µ°UºÞ(°U¥IºÞ²z),¨Ï¥Î@Entity
-@Table(name = "person_info") //@Table¹ïÀ³¨ì¸ê®Æ®wªºªí®æ
+@Entity	//ï¿½ï¿½spring bootï¿½ï¿½ï¿½Uï¿½ï¿½(ï¿½Uï¿½Iï¿½Þ²z),ï¿½Ï¥ï¿½@Entity
+@Table(name = "person_info") //@Tableï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½ï¿½ï¿½ï¿½
 public class PersonInfo {
 	
-	@Id	 //id¬°PK,PK¬°°ß¤@­È	ctrl + shift + o (²£¥Í)importµøµ¡
-	@Column(name = "id") 	//ÄÝ©Ê»P¸ê®Æ®wªºÄæ¦ì³s°Ê@Column(Äæ)
+	@Id	 //idï¿½ï¿½PK,PKï¿½ï¿½ï¿½ß¤@ï¿½ï¿½	ctrl + shift + o (ï¿½ï¿½ï¿½ï¿½)importï¿½ï¿½ï¿½ï¿½
+	@Column(name = "id") 	//ï¿½Ý©Ê»Pï¿½ï¿½Æ®wï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½@Column(ï¿½ï¿½)
 	private String id;
 	
-	@Column(name = "name")	//ÄÝ©Ê»P¸ê®Æ®wªºÄæ¦ì³s°Ê@Column(Äæ)
+	@Column(name = "name")	//ï¿½Ý©Ê»Pï¿½ï¿½Æ®wï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½@Column(ï¿½ï¿½)
 	private String name;
 	
-	@Column(name = "age")	//ÄÝ©Ê»P¸ê®Æ®wªºÄæ¦ì³s°Ê@Column(Äæ)
+	@Column(name = "age")	//ï¿½Ý©Ê»Pï¿½ï¿½Æ®wï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½@Column(ï¿½ï¿½)
 	private int age;
 	
-	@Column(name = "city")	//ÄÝ©Ê»P¸ê®Æ®wªºÄæ¦ì³s°Ê@Column(Äæ)
+	@Column(name = "city")	//ï¿½Ý©Ê»Pï¿½ï¿½Æ®wï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½@Column(ï¿½ï¿½)
 	private String city;
 
 	public PersonInfo() {

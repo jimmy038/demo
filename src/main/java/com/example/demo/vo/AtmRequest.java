@@ -2,12 +2,11 @@ package com.example.demo.vo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AtmRequest { //Request(½Ğ¨D)³q±`¥u·|²£¥Íget&set
+public class AtmRequest { //Requestå¸¶å…¥å…©å€‹åƒæ•¸
 	
-//	§â±q¥~­±¶i¨Óªº½Ğ¨D¥]¤@¥]ÅÜ¦¨¤@­ÓRequest
 	private String account;
-	
-	@JsonProperty("password") //­nÅı¥~­±ªº¬İ­n¨Ï¥ÎJson®æ¦¡,­n¥[¤W@JsonProperty 
+
+	@JsonProperty("password") //@JsonProperty  Jsonæ ¼å¼
 	private String pwd;
 
 	public String getAccount() {

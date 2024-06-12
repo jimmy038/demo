@@ -1,11 +1,11 @@
 package com.example.demo.entity;
 
-//BirdÄ~©ÓAnimal(¦¹®ÉBird¬°¤lÃþ§OAnimal¬°¤÷Ãþ§O) //«Ø¥ß°õ¦æºü ¡V ¹ê§@ Runnable ¤¶­±
-public class Bird extends Animal implements Runnable{ //extendsÂX¥R(Ä~©ÓÃöÁä¦r),Ä~©ÓAnimal
+//Birdï¿½~ï¿½ï¿½Animal(ï¿½ï¿½ï¿½ï¿½Birdï¿½ï¿½ï¿½lï¿½ï¿½ï¿½OAnimalï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½O) //ï¿½Ø¥ß°ï¿½ï¿½ï¿½ï¿½ ï¿½V ï¿½ï¿½@ Runnable ï¿½ï¿½ï¿½ï¿½
+public class Bird extends Animal implements Runnable{ //extendsï¿½Xï¿½R(ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½r),ï¿½~ï¿½ï¿½Animal
 	
-	//HAS-A Ãö«Y (»E¦X(¥]§t))(¨SÃö«YªºÄ~©Ó),³æ¯Â¬°¤F´î¤Öµ{¦¡½Xªº­«½Æ,§â­«½ÆªºªF¦è©â¥X²£¥Í¤@­Ó·sªºÃþ§O
-	//¦]»Ý­nªºÄÝ©Ê³Q­ì¦³ªºÃþ§O(class)©Ò©w¸q¤F,©Ò¥H·í»Ý­n³o¨ÇÄÝ©Ê®É¥i¥Hª½±µ®³TaipeiBankÃþ§O¨Ó¨Ï¥Î
-	private TaipeiBank bank;	//¨p¦³ÄÝ©ÊTaipeiBank,­Y¦³»Ý­nTaipeiBankªº¤T­ÓÄÝ©Ê,¥i¥H¨Ï¥ÎTaipeiBank©Ò©w¸qªºÄÝ©Ê	
+	//HAS-A ï¿½ï¿½ï¿½Y (ï¿½Eï¿½X(ï¿½]ï¿½t))(ï¿½Sï¿½ï¿½ï¿½Yï¿½ï¿½ï¿½~ï¿½ï¿½),ï¿½ï¿½Â¬ï¿½ï¿½Fï¿½ï¿½Öµ{ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½â­«ï¿½Æªï¿½ï¿½Fï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½Í¤@ï¿½Ó·sï¿½ï¿½ï¿½ï¿½ï¿½O
+	//ï¿½]ï¿½Ý­nï¿½ï¿½ï¿½Ý©Ê³Qï¿½ì¦³ï¿½ï¿½ï¿½ï¿½ï¿½O(class)ï¿½Ò©wï¿½qï¿½F,ï¿½Ò¥Hï¿½ï¿½Ý­nï¿½oï¿½ï¿½ï¿½Ý©Ê®É¥iï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½TaipeiBankï¿½ï¿½ï¿½Oï¿½Ó¨Ï¥ï¿½
+	private TaipeiBank bank;	//ï¿½pï¿½ï¿½ï¿½Ý©ï¿½TaipeiBank,ï¿½Yï¿½ï¿½ï¿½Ý­nTaipeiBankï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½Ý©ï¿½,ï¿½iï¿½Hï¿½Ï¥ï¿½TaipeiBankï¿½Ò©wï¿½qï¿½ï¿½ï¿½Ý©ï¿½	
 	
 //	private String branch;	
 	
@@ -16,38 +16,38 @@ public class Bird extends Animal implements Runnable{ //extendsÂX¥R(Ä~©ÓÃöÁä¦r),
 	
 	public Bird() {
 		super();
-		System.out.println("Bird «Øºc¤èªk");
+		System.out.println("Bird ï¿½Øºcï¿½ï¿½k");
 	}	
 	
-// Ä~©Ó¤÷Ãþ§O¬Û¦PªºÄÝ©Ê¤Î¤èªk¥i¥H¥ýµù¸Ñor§R°£
-// ¦bÄ~©Ó¤º·í¤lÃþ§O¤Î¤÷Ãþ§O¦³¬Û¦P¦WºÙ¤èªk®É,¤lÃþ§O­Y­n½Æ¼g­«·s©w¸q¦Û¤vªº¤èªk®É
+// ï¿½~ï¿½Ó¤ï¿½ï¿½ï¿½ï¿½Oï¿½Û¦Pï¿½ï¿½ï¿½Ý©Ê¤Î¤ï¿½kï¿½iï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½ï¿½orï¿½Rï¿½ï¿½
+// ï¿½bï¿½~ï¿½Ó¤ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½Oï¿½Î¤ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Û¦Pï¿½Wï¿½Ù¤ï¿½kï¿½ï¿½,ï¿½lï¿½ï¿½ï¿½Oï¿½Yï¿½nï¿½Æ¼gï¿½ï¿½ï¿½sï¿½wï¿½qï¿½Û¤vï¿½ï¿½ï¿½ï¿½kï¿½ï¿½
 	
-	//·í¤÷¤lÃþ§O¦³¬Û¦P¤èªk¦WºÙ,¤lÃþ§O¹ï¦¹¤èªk­«·s©w¸q¦Û¤vªº¹ê§@¤º®e®É{}¤j¬A¸¹¤ºªº¹ê§@¤º®e
-	//@Override¬°:½Æ¼gªº·N«ä or ­«·s©w¸q(²ßºD¼g¤W@Override)
+	//ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Û¦Pï¿½ï¿½kï¿½Wï¿½ï¿½,ï¿½lï¿½ï¿½ï¿½Oï¿½ï¦¹ï¿½ï¿½kï¿½ï¿½ï¿½sï¿½wï¿½qï¿½Û¤vï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½eï¿½ï¿½{}ï¿½jï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½ï¿½ï¿½e
+	//@Overrideï¿½ï¿½:ï¿½Æ¼gï¿½ï¿½ï¿½Nï¿½ï¿½ or ï¿½ï¿½ï¿½sï¿½wï¿½q(ï¿½ßºDï¿½gï¿½W@Override)
 	@Override 
 	public void eat() {
-		//super.¥Nªí©I¥s¤÷Ãþ§Oªº¤èªk,¥hget¤÷Ãþ§O(Animal)ªºgetName¤èªk
-		System.out.println(super.getName() + "Ãä¦YÃäª±!!");
+		//super.ï¿½Nï¿½ï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½k,ï¿½hgetï¿½ï¿½ï¿½ï¿½ï¿½O(Animal)ï¿½ï¿½getNameï¿½ï¿½k
+		System.out.println(super.getName() + "ï¿½ï¿½Yï¿½äª±!!");
 	}
 	
 	@Override
 	public void sleep() {
-		//super.¥Nªí©I¥s¤÷Ãþ§Oªº¤èªk,¥hget¤÷Ãþ§O(Animal)ªºgetName¤èªk
-		System.out.println(super.getName() + "Ãä¦YÃäºÎ!!");
+		//super.ï¿½Nï¿½ï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½k,ï¿½hgetï¿½ï¿½ï¿½ï¿½ï¿½O(Animal)ï¿½ï¿½getNameï¿½ï¿½k
+		System.out.println(super.getName() + "ï¿½ï¿½Yï¿½ï¿½ï¿½!!");
 	}
 	
 	public void flying() {
-		//super.¥Nªí©I¥s¤÷Ãþ§Oªº¤èªk,¥hget¤÷Ãþ§O(Animal)ªºgetName¤èªk
-		System.out.println(super.getName() + " ¥¿¦b­¸!!"); 
+		//super.ï¿½Nï¿½ï¿½Iï¿½sï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½k,ï¿½hgetï¿½ï¿½ï¿½ï¿½ï¿½O(Animal)ï¿½ï¿½getNameï¿½ï¿½k
+		System.out.println(super.getName() + " ï¿½ï¿½ï¿½bï¿½ï¿½!!"); 
 	}
 
-	//«Ø¥ß°õ¦æºü ¡V ¹ê§@ Runnable ¤¶­±
+	//ï¿½Ø¥ß°ï¿½ï¿½ï¿½ï¿½ ï¿½V ï¿½ï¿½@ Runnable ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public void run() {
 		for(int i = 1; i <= 5 ; i++) {
-			System.out.println(getName() + "¥Ø«e¥¿¦b¶]²Ä" + i + "°é");
+			System.out.println(getName() + "ï¿½Ø«eï¿½ï¿½ï¿½bï¿½]ï¿½ï¿½" + i + "ï¿½ï¿½");
 		}
-		System.out.println("À°§Ú¶}ª½¼½!!");
+		System.out.println("ï¿½ï¿½ï¿½Ú¶}ï¿½ï¿½ï¿½ï¿½!!");
 	}		
 	
 }

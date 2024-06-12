@@ -5,25 +5,25 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity //Entity´N¥u¬O³æ¯Â¸òDB°µªº³sµ²ªº¸ê®Æ¦Ó¤w
+@Entity //Entityï¿½Nï¿½uï¿½Oï¿½ï¿½Â¸ï¿½DBï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¦Ó¤w
 @Table(name = "atm")
 public class Atm {
 	
 	@Id
-	@Column(name = "account")	//±b¸¹
+	@Column(name = "account")	//ï¿½bï¿½ï¿½
 	private String account;
 	
-	@Column(name = "password") //±K½X
-	private String pwd; 	   //µ{¦¡½X¤£­n¼gpassword
+	@Column(name = "password") //ï¿½Kï¿½X
+	private String pwd; 	   //ï¿½{ï¿½ï¿½ï¿½Xï¿½ï¿½ï¿½nï¿½gpassword
 	
 	@Column(name = "balance") //
-	private int balance; //int¹w³]­È0
+	private int balance; //intï¿½wï¿½]ï¿½ï¿½0
 
 	public Atm() {
 		super();
 	}
 
-//	¦]int¹w³]­È0,©Ò¥H«Øºc¤èªk¥u»Ý­n¨â­Ó°Ñ¼Æaccount¸òpwd,©Ò¥H¦A¥Í¦¨¤@­Ó¥u¦³¨â­Ó°Ñ¼Æªº«Øºc¤èªk
+//	ï¿½]intï¿½wï¿½]ï¿½ï¿½0,ï¿½Ò¥Hï¿½Øºcï¿½ï¿½kï¿½uï¿½Ý­nï¿½ï¿½Ó°Ñ¼ï¿½accountï¿½ï¿½pwd,ï¿½Ò¥Hï¿½Aï¿½Í¦ï¿½ï¿½@ï¿½Ó¥uï¿½ï¿½ï¿½ï¿½Ó°Ñ¼Æªï¿½ï¿½Øºcï¿½ï¿½k
 	public Atm(String account, String pwd) { 
 		super();
 		this.account = account;

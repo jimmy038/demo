@@ -2,11 +2,11 @@ package com.example.demo.entity;
 
 public class TaipeiBank {
 
-	private String branch;	//屬性通常都會設定private
+	private String branch;	//嚙豎性通嚙窯嚙踝蕭嚙罵嚙稽嚙緩private
 	
 	private String user;
 	
-	private int balance = 1000;	//給予balance預設值為1000
+	private int balance = 1000;	//嚙踝蕭嚙踝蕭balance嚙緩嚙稽嚙褓穿蕭1000
 
 	public String getBranch() {
 		return branch;
@@ -32,19 +32,19 @@ public class TaipeiBank {
 		this.balance = balance;
 	}
 	
-	//	  	↓資料型態↓方法變數↓在條件判斷內帶入資料型態設定存入金額變數
-	public int saving(int amount) {	//(存款)因為int包含負數所以需做防呆
-		if(amount > 0) {			//如果存款金額大於0
-			balance += amount;		//判斷如果存款金額有大於0去加到餘額內
+	//	  	
+	public int saving(int amount) {
+		if(amount > 0) {
+			balance += amount;
 		}
-		return balance;				//最後回傳回去餘額
-		}
+		return balance;
+	}
 	
-//	  	   ↓資料型態↓方法變數↓在條件判斷內帶入資料型態設定提款金額變數
-	public int withdarw(int amount) { 		   //(提款)
-		if(amount > 0 && balance >= amount ) { //如果提款金額大於0 and餘額大於等於提款金額 
-			balance -= amount;				   //判斷成立時提款金額減掉餘額
+//	  	   嚙踝蕭嚙踝蕭ぇ嚙踝蕭A嚙踝蕭嚙踝蕭k嚙豌數∴蕭嚙箭嚙踝蕭嚙踝蕭P嚙稻嚙踝蕭嚙窮嚙皚嚙踝蕭ぇ嚙踝蕭A嚙稽嚙緩嚙踝蕭嚙誹迎蕭嚙畿嚙豌潘蕭
+	public int withdarw(int amount) { 		   //(嚙踝蕭嚙踝蕭)
+		if(amount > 0 && balance >= amount ) { //嚙緘嚙瘦嚙踝蕭嚙誹迎蕭嚙畿嚙篌嚙踝蕭0 and嚙締嚙畿嚙篌嚙踟等於提款迎蕭嚙畿 
+			balance -= amount;				   //嚙瞑嚙稻嚙踝蕭嚙賠時湛蕭嚙誹迎蕭嚙畿嚙踐掉嚙締嚙畿
 		}
-		return balance;						   //最後回傳回去餘額
+		return balance;						   //嚙諒恬蕭^嚙褒回嚙篁嚙締嚙畿
 		}
 }

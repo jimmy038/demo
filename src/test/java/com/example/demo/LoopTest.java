@@ -25,12 +25,9 @@ public class LoopTest {
 
 	@Test
 	public void LoopTest2() {
-		a: for (int i = 1; 1 <= 9; i++) {
+		a: for (int i = 1; i <= 9; i++) {
 			for (int j = 1; j <= 9; j++) {
-				if (j == 2) {
-					break a; // break會跳出離他最近的迴圈,若要指定跳出的迴圈可以給他一個標籤指定要挑出的迴圈
-				}
-				System.out.printf("%d*%d=%2d;", i, j, i * j);
+				System.out.printf("%d * %d = %2d;", i, j, i * j);
 			}
 			System.out.println();
 		}

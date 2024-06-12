@@ -5,15 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity				  //¦«ºÞEntity,entity¤ºªº³o¥]Menu·í§@¶ë¸ê®Æªº´C¤¶
-@Table(name = "menu") //menu¹ïÀ³¨ì¸ê®Æ®w¤ºªºmenu
+@Entity
+@Table(name = "menu") //menuï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½ï¿½ï¿½menu
 public class Menu {
 	
-	@Id					   //Id ¹ïÀ³¨ì¸ê®Æ®wªºPk
-	@Column(name = "name") //ColumnÄæ¦ì Column¸Ì­±ªºname¹ïÀ³¨ì¸ê®Æ®w¸ê®Æªí¤ºªºÄæ¦ì¦WºÙ
+	@Id					   //Id ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½Pk
+	@Column(name = "name") //Columnï¿½ï¿½ï¿½ Columnï¿½Ì­ï¿½ï¿½ï¿½nameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½Æªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½
 	private String name;
 	
-	@Column(name = "price")//ColumnÄæ¦ì Column¸Ì­±ªºname price¹ïÀ³¨ì¸ê®Æ®w¸ê®Æªí¤ºªºÄæ¦ì»ù®æ
+	@Column(name = "price")//Columnï¿½ï¿½ï¿½ Columnï¿½Ì­ï¿½ï¿½ï¿½name priceï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®wï¿½ï¿½Æªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	private int price;
 	
 	public Menu() {

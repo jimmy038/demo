@@ -3,15 +3,15 @@ package com.example.demo.entity;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class MealId implements Serializable{ //Serializable序列化
-//Meal裡面有ID的屬性集中一個class做管理,把兩個PK由一個類別做集中管理
+public class MealId implements Serializable{ //Serializable嚙褒列嚙踝蕭
+//Meal嚙諒哨蕭嚙踝蕭ID嚙踝蕭嚙豎性塚蕭嚙踝蕭嚙瑾嚙踝蕭class嚙踝蕭嚙豬理,嚙踝蕭嚙踝蕭PK嚙諸一嚙踝蕭嚙踝蕭嚙瞌嚙踝蕭嚙踝蕭嚙踝蕭嚙豬理
 	
 	private String name;
 	
 	private String cookingStyle;
 	
 
-	public MealId() { //只要有用到有參數的,預設建構方法就要產生
+	public MealId() { //嚙線嚙緯嚙踝蕭嚙諄到有嚙諸數迎蕭,嚙緩嚙稽嚙諍構嚙踝蕭k嚙瞇嚙緯嚙踝蕭嚙踝蕭
 		super();
 	}
 	

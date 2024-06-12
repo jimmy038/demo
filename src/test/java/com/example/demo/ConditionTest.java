@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 public class ConditionTest {
 
-	private int b;
 	@Test		//JAVA內的數值的比較只有到等於等於==,下列為if判斷式
 	//if()括號內為條件判斷{}大括號內為程式敘述區域 if(條件判斷){程式敘述區域}
 	public void ifTest() {
@@ -30,6 +29,7 @@ public class ConditionTest {
 		}
 	}
 	
+	@Test
 	public void ifTest2() {
 		int a = 5;
 		if(a > 5) {
@@ -39,6 +39,18 @@ public class ConditionTest {
 		}else {
 			System.out.println("123");
 		}
+	}
+	
+	@Test
+	public void ifTest3() {
+		int x = 6;
+		if(x > 6) {
+			System.out.println("/");
+		}else if (x < 8) {
+			System.out.println("666");
+		}else {
+			System.out.println("789");
+		}				
 	}
 	
 	/*練習 – 使用 switch

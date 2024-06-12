@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	
 	//spring cache
@@ -31,7 +32,7 @@ dependencies {
 	//mysql connector
 	implementation 'mysql:mysql-connector-java:8.0.31'
 	
-	//spring security ,¨Ï¥Î BCryptPasswordEncoder : ¥[±K ±K½X¥Î
+	//spring security ,ï¿½Ï¥ï¿½ BCryptPasswordEncoder : ï¿½[ï¿½K ï¿½Kï¿½Xï¿½ï¿½
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

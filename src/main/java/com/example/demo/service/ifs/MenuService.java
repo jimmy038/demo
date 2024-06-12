@@ -1,4 +1,4 @@
-package com.example.demo.service.ifs; //ifs¸Ì­±©ñ¤¶­±
+package com.example.demo.service.ifs; //ifsï¿½Ì­ï¿½ï¿½ñ¤¶­ï¿½
 
 import java.util.List;
 

@@ -15,17 +15,17 @@ import ch.qos.logback.core.net.SyslogOutputStream;
 public class ArrayTest {
 
 	@Test
-	public void arrayTest() {	//°}¦C«Å§iªºªÅ¶¡(ªø«×)©T©w¡C
-		int[] a = new int[5];	//new«Ø¥ß¤@­ÓÃş§O,¹º¤À¤@­Ó°O¾ĞÅéªÅ¶¡µ¹¤©³o­ÓÃş§O¡C
+	public void arrayTest() {	//ï¿½}ï¿½Cï¿½Å§iï¿½ï¿½ï¿½Å¶ï¿½(ï¿½ï¿½ï¿½ï¿½)ï¿½Tï¿½wï¿½C
+		int[] a = new int[5];	//newï¿½Ø¥ß¤@ï¿½ï¿½ï¿½ï¿½ï¿½O,ï¿½ï¿½ï¿½ï¿½ï¿½@ï¿½Ó°Oï¿½ï¿½ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½C
 		System.out.println(a);
 		System.out.println(a.length);
-		a[0] = 1; 	//§â1½á¤©µ¥¸¹¥ªÃä³o­Ó°}¦Caªº²Ä0­Ó¯Á¤Ş¦ì¸m(index)¡C
-		a[1] = 5; 	//§â1½á¤©µ¥¸¹¥ªÃä³o­Ó°}¦Caªº²Ä0­Ó¯Á¤Ş¦ì¸m(index)¡C
+		a[0] = 1; 	//ï¿½ï¿½1ï¿½á¤©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Ó°}ï¿½Caï¿½ï¿½ï¿½ï¿½0ï¿½Ó¯ï¿½ï¿½Ş¦ï¿½m(index)ï¿½C
+		a[1] = 5; 	//ï¿½ï¿½1ï¿½á¤©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Ó°}ï¿½Caï¿½ï¿½ï¿½ï¿½0ï¿½Ó¯ï¿½ï¿½Ş¦ï¿½m(index)ï¿½C
 		System.out.println(a);
 		System.out.println("=====================");
-		//«Å§iªº¦P®Éµ¹¤©ªì©l­È
+		//ï¿½Å§iï¿½ï¿½ï¿½Pï¿½Éµï¿½ï¿½ï¿½ï¿½ï¿½lï¿½ï¿½
 		int[] b = {1, 3, 5, 7, 9}; 
-		System.out.println(b[2]);  //¦L¥X°}¦C¯Á¤Ş¦ì¸m²Ä¤G­Ó¬°5,¯Á¤Ş­È³£±q0¶}©l
+		System.out.println(b[2]);  //ï¿½Lï¿½Xï¿½}ï¿½Cï¿½ï¿½ï¿½Ş¦ï¿½mï¿½Ä¤Gï¿½Ó¬ï¿½5,ï¿½ï¿½ï¿½Ş­È³ï¿½ï¿½q0ï¿½}ï¿½l
 		for(int item: b) {
 			System.out.println(item);
 		}
@@ -33,49 +33,50 @@ public class ArrayTest {
 	
 	@Test
 	public void listTest() {
-		/*    ¡õ¥²¶ñ								   				             ¡õ¥i¬Ù²¤
-		List<¸ê®Æ«¬ºA> ÅÜ¼Æ¦WºÙ = new ArrayList<>(); ¥Ø«e¥ı°O³o­Ó¥u¯à¨Ï¥Înew ArrayList<©ñ¸ê®Æ«¬ºA>( );*/
+		/*    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½								   				             ï¿½ï¿½ï¿½iï¿½Ù²ï¿½
+		List<ï¿½ï¿½Æ«ï¿½ï¿½A> ï¿½Ü¼Æ¦Wï¿½ï¿½ = new ArrayList<>(); ï¿½Ø«eï¿½ï¿½ï¿½Oï¿½oï¿½Ó¥uï¿½ï¿½Ï¥ï¿½new ArrayList<ï¿½ï¿½ï¿½Æ«ï¿½ï¿½A>( );*/
 		List<String> strList = new ArrayList<>(); 
-		strList.add("A");  //ListªºªÅ¶¡ªø«×¬°°ÊºAªº add¬°¨Ì§Ç§â¸ê®Æ¥[¤J¡C
+		strList.add("A");  //Listï¿½ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½×¬ï¿½ï¿½ÊºAï¿½ï¿½ addï¿½ï¿½ï¿½Ì§Ç§ï¿½ï¿½Æ¥[ï¿½Jï¿½C
 		strList.add("C");  
 		strList.add("D");
 		strList.add("B");
-		//List¬O¦³¶¶§Ç(¦³§Ç)ªº,¨Ì·Ó¥[¤Jªº¥ı«á¶¶§Ç¦L¥X¡C
+		//Listæ˜¯æœ‰é †åºçš„ æ˜¯ä¾ç…§åŠ å…¥çš„å…ˆå¾Œé †åº
 		System.out.println(strList);
 		System.out.println("========================");
-		System.out.println(strList.size()); //­pºâListªø«×¨Ï¥Îsize
+		System.out.println(strList.size()); //ç®—é™£åˆ—çš„é•·åº¦.size()ï¼Œé™£åˆ—ç®—é•·åº¦length
 		System.out.println("========================");
-		//¨ú¥X°}¦C©Î¬OList³£¬O¨Ï¥Îfor°j°é¨ú¥X
-		for(int i = 0;i < strList.size(); i++) {
-			System.out.println(strList.get(i)); //¦L¥X¨Ã¨ú¥X¨Ï¥Îget(i)
+		//é™£åˆ—è·ŸListéƒ½æ˜¯ç”¨forè¿´åœˆå–è³‡æ–™ indexå¾0é–‹å§‹å®£å‘Šç‚º0
+		for(int i = 0; i < strList.size(); i++) {
+			System.out.println(strList.get(i)); //
 		}
 		System.out.println("========================");
-		List<String> strList1 = List.of("A", "S", "D", "F");//¤£¥i§ó§ï,©T©w¤j¤p
-		// 						¡õ­nimport²Ä¤G­Ó
-		List<String> strList2 = Arrays.asList("A1", "S1", "D1", "F1");//¤£¥i§ó§ï,©T©w¤j¤p
-		//¡õ°õ¦æ¤U¤@¦æµ{¦¡·|³ø¿ù,¦]¬°¥ÎList.of()²£¥ÍªºList¨ä¤j¤p©T©w,µLªk¦A¼W§R
-//		strList.add("G");
-		//¡õ°õ¦æ¤U¤@¦æµ{¦¡·|³ø¿ù,¦]¬°¥ÎArrays.asList()²£¥ÍªºList¨ä¤j¤p©T©w,µLªk¦A¼W§R
+		//ç›´æ¥çµ¦å€¼List.of()æ‹¬è™Ÿå…§çµ¦å€¼ ï¼Œ List.ofç”¢ç”Ÿç©ºé–“é•·åº¦å›ºå®š
+		List<String> strList1 = List.of("A", "S", "D", "F");
+		// 						import
+		List<String> strList2 = Arrays.asList("A1", "S1", "D1", "F1");//
+		//åŸ·è¡Œä¸‹ä¸€è¡Œç¨‹å¼æœƒå ±éŒ¯ å› ç‚ºç”¨List.ofç”¢ç”Ÿç©ºé–“é•·åº¦å›ºå®šï¼Œç„¡æ³•å†å¢åˆª
+//		strList1.add("G");
+		//åŸ·è¡Œä¸‹ä¸€è¡Œç¨‹å¼æœƒå ±éŒ¯ å› ç‚ºç”¨List.ofç”¢ç”Ÿç©ºé–“é•·åº¦å›ºå®šï¼Œç„¡æ³•å†å¢åˆª
 //		strList2.add("G1");
 		System.out.println("========================");
-		List<String> strList3 = new ArrayList<>(List.of("A", "S", "D", "F")); //®e¯ÇªºªÅ¶¡§ï¬°new ArrayList§ï¬°®e¯ÇªÅ¶¡°ÊºAªº¥i¥H°µ¼W§R
-		List<String> strList4 = new ArrayList<>(Arrays.asList("A1", "S1", "D1", "F1"));//®e¯ÇªºªÅ¶¡§ï¬°new ArrayList§ï¬°®e¯ÇªÅ¶¡°ÊºAªº¥i¥H°µ¼W§R
-		//new ArrayList<>();´N¬O²£¥Í¤@­Ó°ÊºAªºªÅ¶¡¥i¥H°µ¼W§R
+		List<String> strList3 = new ArrayList<>(List.of("A", "S", "D", "F")); //ï¿½eï¿½Çªï¿½ï¿½Å¶ï¿½ï¿½ï¬°new ArrayListï¿½ï¬°ï¿½eï¿½ÇªÅ¶ï¿½ï¿½ÊºAï¿½ï¿½ï¿½iï¿½Hï¿½ï¿½ï¿½Wï¿½R
+		List<String> strList4 = new ArrayList<>(Arrays.asList("A1", "S1", "D1", "F1"));//ï¿½eï¿½Çªï¿½ï¿½Å¶ï¿½ï¿½ï¬°new ArrayListï¿½ï¬°ï¿½eï¿½ÇªÅ¶ï¿½ï¿½ÊºAï¿½ï¿½ï¿½iï¿½Hï¿½ï¿½ï¿½Wï¿½R
+		//new ArrayList<>();ï¿½Nï¿½Oï¿½ï¿½ï¿½Í¤@ï¿½Ó°ÊºAï¿½ï¿½ï¿½Å¶ï¿½ï¿½iï¿½Hï¿½ï¿½ï¿½Wï¿½R
 	}
 	
 	@Test
-	public void foreachTest() {
-		List<String> strList = new ArrayList<>(List.of("A", "S", "D", "F"));//¤£¥i§ó§ï,©T©w¤j¤p
+	public void forEachTest() {
+		List<String> strList = new ArrayList<>(List.of("A", "S", "D", "F"));//ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½,ï¿½Tï¿½wï¿½jï¿½p
 		for(int i = 0;i < strList.size(); i++) {
 			System.out.println(strList.get(i)); 
 		}
 		System.out.println("========================");
-		//foreach(¹M¾ú):·N«ä¬O«ü±NList¸Ìªº¨C­Ó¶µ¥Ø±qÀY¨ì§À¤@­Ó¤@­Ó¨ú¥X
-		for(String item :strList ){	  //for(¸ê®Æ«¬ºA ÅÜ¼Æ:¹ï½Ö§@¥Î)
+		//foreach(ï¿½Mï¿½ï¿½):ï¿½Nï¿½ï¿½Oï¿½ï¿½ï¿½NListï¿½Ìªï¿½ï¿½Cï¿½Ó¶ï¿½ï¿½Ø±qï¿½Yï¿½ï¿½ï¿½ï¿½@ï¿½Ó¤@ï¿½Ó¨ï¿½ï¿½X
+		for(String item : strList ){	  //for(ï¿½ï¿½Æ«ï¿½ï¿½A ï¿½Ü¼ï¿½:ï¿½ï¿½Ö§@ï¿½ï¿½)
 			System.out.println(item);
 		}
 		System.out.println("========================");	
-		strList.forEach(item ->{ 	//strList¸ÌªºforEach(¹M¾ú)
+		strList.forEach(item ->{ 	//strListï¿½Ìªï¿½forEach(ï¿½Mï¿½ï¿½)
 			System.out.println(item);
 		});
 	}
@@ -86,22 +87,22 @@ public class ArrayTest {
 		int[] b = new int[5];
 		System.out.println(a);
 		System.out.println(b);
-		//List<>¬A¸¹¤ºªºÃş§O«¬ºA©ñªº¤@©w¬°¤j¼gªºÃş§O«¬ºA
+		//List<>ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Aï¿½ñªº¤@ï¿½wï¿½ï¿½ï¿½jï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½A
 		System.out.println("==================");
-		//¥i¥Hª½±µ¨Ï¥Îµ¥¸¹µ¹¤©­È¥u¦³8ºØ°ò¥»¸ê®Æ«¬ºA¤j¤p¼g&¦r¦ê
+		//ï¿½iï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½Ï¥Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥uï¿½ï¿½8ï¿½Ø°ò¥»¸ï¿½Æ«ï¿½ï¿½Aï¿½jï¿½pï¿½g&ï¿½rï¿½ï¿½
 				
 	}
 	
-
+ 
 	@Test
 	public void listTest2() {
 		int a = 5;
 		int[] b = new int[5];
 		System.out.println(a);
 		System.out.println(b);
-		//List<>¬A¸¹¤ºªºÃş§O«¬ºA©ñªº¤@©w¬°¤j¼gªºÃş§O«¬ºA
+		//List<>ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Aï¿½ñªº¤@ï¿½wï¿½ï¿½ï¿½jï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½A
 		System.out.println("==================");
-		//¥i¥Hª½±µ¨Ï¥Îµ¥¸¹µ¹¤©­È¥u¦³8ºØ°ò¥»¸ê®Æ«¬ºA¤j¤p¼g&¦r¦ê
+		//ï¿½iï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½Ï¥Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥uï¿½ï¿½8ï¿½Ø°ò¥»¸ï¿½Æ«ï¿½ï¿½Aï¿½jï¿½pï¿½g&ï¿½rï¿½ï¿½
 				
 	}
 	
@@ -111,9 +112,9 @@ public class ArrayTest {
 		int[] b = new int[5];
 		System.out.println(a);
 		System.out.println(b);
-		//List<>¬A¸¹¤ºªºÃş§O«¬ºA©ñªº¤@©w¬°¤j¼gªºÃş§O«¬ºA
+		//List<>ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Aï¿½ñªº¤@ï¿½wï¿½ï¿½ï¿½jï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½A
 		System.out.println("==================");
-		//¥i¥Hª½±µ¨Ï¥Îµ¥¸¹µ¹¤©­È¥u¦³8ºØ°ò¥»¸ê®Æ«¬ºA¤j¤p¼g&¦r¦ê
+		//ï¿½iï¿½Hï¿½ï¿½ï¿½ï¿½ï¿½Ï¥Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¥uï¿½ï¿½8ï¿½Ø°ò¥»¸ï¿½Æ«ï¿½ï¿½Aï¿½jï¿½pï¿½g&ï¿½rï¿½ï¿½
 				
 	}
 }
